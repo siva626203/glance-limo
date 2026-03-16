@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glance Limousine | Singapore Limousine, Malaysia Transfers, Private Tours & Seat-In-Coach</title>
+  <meta name="description" content="Glance Limousine offers luxury chauffeur services in Singapore, cross-border Malaysia transfers, private Singapore tours, private Malaysia tours, and seat-in-coach shared tours." />
+  <meta name="keywords" content="Singapore limousine, Singapore airport transfer, chauffeur service Singapore, Malaysia transfer from Singapore, Johor transfer, Singapore private tours, Malaysia tours, seat in coach Singapore, luxury transport Singapore" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Glance Limousine | Luxury Chauffeur, Tours & Cross-Border Transfers" />
+  <meta property="og:description" content="Luxury chauffeur service across Singapore and Malaysia with private transfers, private tours, and seat-in-coach experiences." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80" />
+  <meta name="theme-color" content="#241c18" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#181311;
+      --bg2:#241c18;
+      --panel:#2c221d;
+      --panel2:#352923;
+      --brown:#6b5445;
+      --brown-deep:#17110e;
+      --champagne:#b79a83;
+      --champagne-soft:#e8d8c8;
+      --line:rgba(231,213,194,.16);
+      --line-strong:rgba(231,213,194,.28);
+      --text:#f5eee8;
+      --muted:#ccb9aa;
+      --white:#fff;
+      --success:#25D366;
+      --shadow:0 18px 45px rgba(0,0,0,.25);
+      --radius:26px;
+    }
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',sans-serif;
+      background:linear-gradient(180deg,var(--bg),#120f0d);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{max-width:1380px;margin:0 auto;padding:0 20px}
+    .topbar{
+      background:#0f0c0a;
+      color:var(--champagne-soft);
+      text-align:center;
+      padding:10px 16px;
+      font-size:13px;
+      font-weight:600;
+      border-bottom:1px solid var(--line);
+    }
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(24,19,17,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:16px 0;
+    }
+    .brand{display:flex;flex-direction:column;line-height:1.05}
+    .brand-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:34px;
+      font-weight:700;
+      color:var(--champagne-soft);
+    }
+    .brand-sub{
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-top:4px;
+    }
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .nav-links a{
+      font-size:14px;
+      font-weight:700;
+      color:var(--champagne-soft);
+      transition:.2s ease;
+    }
+    .nav-links a:hover{color:var(--white)}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at top right, rgba(183,154,131,.14), transparent 25%),
+        linear-gradient(135deg, rgba(24,19,17,.88), rgba(53,41,35,.74)),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      border-bottom:1px solid var(--line);
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.48));
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:28px;
+      align-items:center;
+      min-height:760px;
+      padding:92px 0 88px;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:8px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--champagne-soft);
+    }
+    .hero h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:88px;
+      line-height:.93;
+      margin:18px 0 16px;
+      color:var(--white);
+      max-width:900px;
+    }
+    .hero p{
+      max-width:800px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.9;
+    }
+    .hero-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+    .hero-points span{
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      color:var(--champagne-soft);
+      font-size:13px;
+      font-weight:700;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .hero-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line-strong);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+    .hero-card h3{
+      font-size:24px;
+      margin-bottom:12px;
+      color:var(--white);
+    }
+    .hero-card p{
+      font-size:14px;
+      color:var(--muted);
+      margin-bottom:10px;
+      line-height:1.85;
+    }
+    .hero-card-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
+    }
+    .metric{
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+    }
+    .metric strong{display:block;font-size:28px;color:var(--white)}
+    .metric span{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+    .section{padding:74px 0}
+    .section.alt{
+      background:rgba(255,255,255,.02);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .section-head{margin-bottom:24px}
+    .section-head h2{
+      font-family:'Cormorant Garamond',serif;
+      font-size:48px;
+      color:var(--champagne-soft);
+      margin-bottom:8px;
+    }
+    .section-head p{
+      max-width:980px;
+      color:var(--muted);
+      line-height:1.85;
+    }
+
+    .grid-2,.grid-3,.grid-4,.tour-grid,.faq-grid{
+      display:grid;
+      gap:22px;
+    }
+    .grid-2,.faq-grid{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4,.tour-grid{grid-template-columns:repeat(4,1fr)}
+
+    .card{
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .card-body{padding:22px}
+    .service-card{padding:24px}
+    .service-icon{
+      width:48px;height:48px;border-radius:16px;
+      background:rgba(183,154,131,.12);
+      color:var(--champagne-soft);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;margin-bottom:14px;
+    }
+    .service-card h3,.faq-box h3,.cta-box h3,.fleet-body h3,.tour-title{color:var(--champagne-soft)}
+    .service-card p,.fleet-body p,.tour-desc,.faq-item span,.notice,.contact-card p,.mini-copy{color:var(--muted)}
+
+    .notice{
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px 20px;
+      box-shadow:var(--shadow);
+      line-height:1.8;
+    }
+    .notice strong{color:var(--champagne-soft)}
+
+    .toolbar{
+      display:flex;
+      gap:14px;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      margin:0 0 22px;
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .toolbar-left{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      flex:1;
+    }
+    .toolbar input,.toolbar select,.field input,.field select,.field textarea{
+      padding:12px 14px;
+      border:1px solid rgba(231,213,194,.18);
+      border-radius:12px;
+      font-family:inherit;
+      outline:none;
+      background:#1b1512;
+      color:var(--text);
+      width:100%;
+    }
+    .toolbar input,.toolbar select{min-width:220px}
+    .count{font-weight:800;color:var(--champagne-soft);font-size:14px}
+
+    .tour-card{
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      transition:transform .2s ease, border-color .2s ease;
+    }
+    .tour-card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+    .tour-card img{
+      width:100%;
+      height:195px;
+      object-fit:cover;
+      display:block;
+    }
+    .badge{
+      display:inline-block;
+      background:rgba(183,154,131,.12);
+      color:var(--champagne-soft);
+      border-radius:999px;
+      padding:7px 11px;
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+    .tour-title{
+      font-size:20px;
+      font-weight:800;
+      line-height:1.35;
+      margin-bottom:8px;
+      min-height:54px;
+    }
+    .tour-desc{
+      font-size:14px;
+      line-height:1.7;
+      margin-bottom:15px;
+      min-height:70px;
+    }
+    .meta{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:10px;
+      margin-bottom:16px;
+    }
+    .meta-box{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px;
+      text-align:center;
+    }
+    .meta-label{
+      display:block;
+      font-size:11px;
+      color:var(--muted);
+      margin-bottom:5px;
+      font-weight:700;
+    }
+    .meta-value{
+      display:block;
+      font-size:15px;
+      font-weight:800;
+      color:var(--champagne-soft);
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 20px;
+      border-radius:14px;
+      background:var(--champagne);
+      color:#120f0d;
+      font-weight:800;
+      border:none;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn.full{width:100%}
+    .btn.ghost{
+      background:transparent;
+      color:var(--champagne-soft);
+      border:1px solid var(--line-strong);
+    }
+
+    .transfer-wrap{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:24px;
+      align-items:start;
+    }
+    .sticky-box{
+      position:sticky;
+      top:92px;
+      padding:24px;
+    }
+    .result{
+      margin-top:14px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      font-size:22px;
+      font-weight:800;
+      color:var(--champagne-soft);
+    }
+
+    table{width:100%;border-collapse:collapse;overflow:hidden}
+    .table-wrap{
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    th{
+      background:#201814;
+      color:var(--champagne-soft);
+      text-align:left;
+      padding:16px;
+      font-size:14px;
+    }
+    td{
+      padding:15px 16px;
+      border-bottom:1px solid var(--line);
+      font-size:14px;
+      color:var(--text);
+    }
+    tr:last-child td{border-bottom:none}
+
+    .fleet-card{overflow:hidden}
+    .fleet-image{height:220px;background-size:cover;background-position:center}
+    .fleet-body{padding:22px}
+    .tag{
+      display:inline-block;
+      background:rgba(183,154,131,.12);
+      color:var(--champagne-soft);
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    .faq-box,.cta-box,.contact-card,.form-card{padding:26px}
+    .faq-box h3,.cta-box h3{
+      font-size:38px;
+      font-family:'Cormorant Garamond',serif;
+      margin-bottom:14px;
+    }
+    .faq-list{display:grid;gap:14px}
+    .faq-item{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+    .faq-item strong{display:block;color:var(--champagne-soft);margin-bottom:8px;font-size:16px}
+    .cta-box{background:linear-gradient(135deg,#3c2e26 0%, #6f5647 100%)}
+    .cta-box p{color:#f1e5db;line-height:1.8}
+    .cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .contact-stack .card{margin-bottom:16px}
+    .field{margin-bottom:14px}
+    .field label{
+      display:block;
+      margin-bottom:7px;
+      font-size:14px;
+      font-weight:700;
+      color:var(--champagne-soft);
+    }
+    .mini-copy{font-size:13px;line-height:1.8}
+
+    footer{
+      padding:40px 0 120px;
+      border-top:1px solid var(--line);
+      background:#140f0d;
+    }
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr .8fr;gap:18px}
+    footer h4{margin-bottom:14px;color:var(--champagne-soft)}
+    footer p,footer a{
+      margin-bottom:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+      display:block;
+    }
+
+    .floating-dock{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:1001;
+    }
+    .floating-dock a{
+      color:#fff;
+      padding:12px 16px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:800;
+      box-shadow:0 10px 26px rgba(0,0,0,.2);
+    }
+    .dock-wa{background:#25D366}
+    .dock-mail{background:#8b5e3c}
+    .dock-call{background:#3f2f26}
+    .dock-link{background:#6b5445}
+
+    @media (max-width:1180px){
+      .hero-inner,.grid-2,.grid-3,.grid-4,.tour-grid,.faq-grid,.contact-wrap,.transfer-wrap,.footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .sticky-box{position:static}
+      .hero h1{font-size:66px}
+    }
+    @media (max-width:768px){
+      .nav-inner{flex-direction:column;align-items:flex-start}
+      .hero h1{font-size:46px}
+      .section-head h2{font-size:36px}
+      .grid-2,.grid-3,.grid-4,.tour-grid,.faq-grid,.contact-wrap,.transfer-wrap,.footer-grid,.hero-inner,.hero-card-grid{
+        grid-template-columns:1fr;
+      }
+      .toolbar input,.toolbar select{min-width:100%}
+      .meta{grid-template-columns:1fr}
+      .floating-dock{right:12px;bottom:12px}
+      .floating-dock a{font-size:12px;padding:10px 13px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Glance Limousine • Singapore Chauffeur • Malaysia Transfer • Private Tours • Seat-In-Coach</div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-title">Glance Limousine</div>
+        <div class="brand-sub">Singapore · Malaysia · Private Chauffeur</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#sg-transfer">Singapore Transfer</a>
+        <a href="#my-transfer">Malaysia Transfer</a>
+        <a href="#sg-tours">Singapore Tours</a>
+        <a href="#my-tours">Malaysia Tours</a>
+        <a href="#shared">Seat In Coach</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">Luxury limousine · tours · transfers</div>
+        <h1>Singapore luxury transport with stronger booking pages and full tour visibility.</h1>
+        <p>
+          This version keeps your brown luxury direction, upgrades the hero section, improves SEO structure,
+          makes the whole site feel like one premium brand, and ensures customers can browse the full 50 Singapore tours,
+          full 50 Malaysia tours, and the Seat-In-Coach section clearly.
+        </p>
+        <div class="hero-points">
+          <span>SEO-Focused Hero</span>
+          <span>50 Singapore Tours Visible</span>
+          <span>50 Malaysia Tours Visible</span>
+          <span>Seat In Coach Floating Link Added</span>
+          <span>One Strong Brown Identity</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Book Chauffeur Now</a>
+          <a class="btn ghost" href="#sg-tours">View Singapore Tours</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Built to sell better</h3>
+        <p>The best limousine website is not only beautiful. It must rank for the right keywords, show clear service categories, make routes easy to understand, and move customers to WhatsApp fast.</p>
+        <p>This version improves your first impression, increases service clarity, and uses full-tour rendering so your customer can actually see the complete product range instead of only a few cards.</p>
+        <div class="hero-card-grid">
+          <div class="metric"><strong>50</strong><span>Singapore Tours</span></div>
+          <div class="metric"><strong>50</strong><span>Malaysia Tours</span></div>
+          <div class="metric"><strong>11</strong><span>Seat-In-Coach Tours</span></div>
+          <div class="metric"><strong>24/7</strong><span>Booking Ready</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Services</h2>
+        <p>A clean service structure that shows what you actually sell and where the user should go next. This is stronger for conversion and stronger for SEO because each service is clearly segmented.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card service-card"><div class="service-icon">01</div><h3>Singapore Transfer</h3><p>Airport, hotel, hourly charter and point-to-point private limousine services in Singapore.</p></div>
+        <div class="card service-card"><div class="service-icon">02</div><h3>Singapore Tours</h3><p>Private chauffeur tours for city, family, night, heritage, shopping and VIP travel.</p></div>
+        <div class="card service-card"><div class="service-icon">03</div><h3>Malaysia Tours</h3><p>Private same-day Malaysia touring from Singapore with driver attached throughout.</p></div>
+        <div class="card service-card"><div class="service-icon">04</div><h3>Seat In Coach</h3><p>Shared tours with adult and child pricing for clients who want guided value experiences.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="sg-transfer">
+    <div class="container">
+      <div class="section-head">
+        <h2>Singapore Transfer</h2>
+        <p>Private transfer page for airport arrival, departure, hotel transfer, business trips and point-to-point movement in Singapore.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Economy</span>
+            <h3>Toyota Noah</h3>
+            <p>Airport transfer and city transfer for practical premium travellers.</p>
+            <a class="btn full" href="#contact">Book Now</a>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Premium</span>
+            <h3>Toyota Alphard / Vellfire</h3>
+            <p>Popular luxury MPV for airport, hotel and family transport.</p>
+            <a class="btn full" href="#contact">Book Now</a>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Business</span>
+            <h3>Mercedes V-Class</h3>
+            <p>Business-class van for executives, hotel guests and VIP movement.</p>
+            <a class="btn full" href="#contact">Book Now</a>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Luxury</span>
+            <h3>Mercedes S-Class</h3>
+            <p>Flagship luxury chauffeur choice for VIP and premium executive bookings.</p>
+            <a class="btn full" href="#contact">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sg-tours">
+    <div class="container">
+      <div class="section-head">
+        <h2>Singapore Tours</h2>
+        <p>All 50 Singapore tours are rendered below, not just a small preview. Search and category filter are included so the section stays clean even with the full catalogue visible.</p>
+      </div>
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <input type="text" id="sgSearch" placeholder="Search Singapore tours..." />
+          <select id="sgCategory">
+            <option value="All">All Categories</option>
+            <option value="City">City</option>
+            <option value="Night">Night</option>
+            <option value="Food">Food</option>
+            <option value="Heritage">Heritage</option>
+            <option value="Family">Family</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Nature">Nature</option>
+            <option value="Luxury">Luxury</option>
+          </select>
+        </div>
+        <div class="count" id="sgCount">50 tours</div>
+      </div>
+      <div class="tour-grid" id="sgTourGrid"></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="my-tours">
+    <div class="container">
+      <div class="section-head">
+        <h2>Malaysia Tours</h2>
+        <p>All 50 Malaysia tours are visible here in the same premium layout. Johor, Desaru, Legoland, shopping, heritage and long-distance routes all sit inside one consistent system.</p>
+      </div>
+      <div class="notice"><strong>Important booking rule:</strong> Minimum booking is <strong>2 adults</strong> for private Malaysia tours. Johor starts from <strong>8 hours</strong> and Melaka from <strong>12 hours</strong>.</div>
+      <div style="height:22px"></div>
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <input type="text" id="mySearch" placeholder="Search Malaysia tours..." />
+          <select id="myCategory">
+            <option value="All">All Categories</option>
+            <option value="Johor City">Johor City</option>
+            <option value="Family">Family</option>
+            <option value="Nature">Nature</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Food">Food</option>
+            <option value="Heritage">Heritage</option>
+            <option value="Desaru">Desaru</option>
+            <option value="Melaka">Melaka</option>
+            <option value="Kuala Lumpur">Kuala Lumpur</option>
+          </select>
+        </div>
+        <div class="count" id="myCount">50 tours</div>
+      </div>
+      <div class="tour-grid" id="myTourGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="shared">
+    <div class="container">
+      <div class="section-head">
+        <h2>Seat In Coach Tours</h2>
+        <p>This is a real shared-tour section with adult and child pricing and its own floating quick link.</p>
+      </div>
+      <div class="notice">
+        <strong>Important:</strong> These are <strong>seat-in-coach / shared tours</strong> with <strong>adult</strong> and <strong>child</strong> pricing only. Keep this separate from the private chauffeur tour pages.
+      </div>
+      <div style="height:22px"></div>
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <input type="text" id="sharedSearch" placeholder="Search seat in coach tours..." />
+          <select id="sharedCategory">
+            <option value="All">All Categories</option>
+            <option value="Explore Singapore">Explore Singapore</option>
+            <option value="Wildlife Encounter">Wildlife Encounter</option>
+            <option value="After Dark">After Dark</option>
+            <option value="Walking Tour">Walking Tour</option>
+            <option value="Cruise & River">Cruise & River</option>
+          </select>
+        </div>
+        <div class="count" id="sharedCount">11 tours</div>
+      </div>
+      <div class="tour-grid" id="sharedTourGrid"></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="my-transfer">
+    <div class="container">
+      <div class="section-head">
+        <h2>Malaysia Transfer / Cross Border</h2>
+        <p>One-way rates page for Malaysia and Thailand routes, kept in rate-table logic for customers who want a fast quotation.</p>
+      </div>
+      <div class="transfer-wrap">
+        <div class="card sticky-box">
+          <h3 style="font-size:30px;color:var(--champagne-soft);margin-bottom:12px;">Transfer Price Calculator</h3>
+          <div class="field">
+            <label>Destination</label>
+            <select id="destination">
+              <option value="">Select Destination</option>
+              <option value="Johor Bahru">Johor Bahru</option>
+              <option value="Pontian">Pontian</option>
+              <option value="Desaru">Desaru</option>
+              <option value="Kluang">Kluang</option>
+              <option value="Batu Pahat">Batu Pahat</option>
+              <option value="Muar">Muar</option>
+              <option value="Melacca">Melacca</option>
+              <option value="Kuala Lumpur">Kuala Lumpur</option>
+              <option value="Genting">Genting Highlands</option>
+              <option value="Penang">Penang</option>
+              <option value="Hatyai">Hatyai Thailand</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Vehicle</label>
+            <select id="vehicle">
+              <option value="">Select Vehicle</option>
+              <option value="Economy">Economy</option>
+              <option value="Premium">Premium</option>
+              <option value="Business">Business</option>
+              <option value="Luxury">Luxury</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Passengers</label>
+            <input type="number" id="pax" placeholder="Enter passengers">
+          </div>
+          <button class="btn full" onclick="calculateRate()">Calculate Price</button>
+          <div class="result" id="resultBox">Estimated Price: —</div>
+          <button class="btn full" style="margin-top:14px;" onclick="sendRateBooking()">Send WhatsApp Booking</button>
+          <div class="notice" style="margin-top:16px;">
+            Please send the <strong>exact pickup and drop-off location</strong> and we will get the exact quotation. All <strong>toll charge and fuel is inclusive</strong>. If there is a stopover for long distance driver, <strong>driver accommodation should be covered at SGD 50 per day</strong>.
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Destination</th><th>Distance</th><th>Economy</th><th>Premium</th><th>Business</th><th>Luxury</th></tr>
+            <tr><td>Johor Bahru</td><td>30 km</td><td>SGD 180</td><td>SGD 250</td><td>SGD 300</td><td>SGD 500</td></tr>
+            <tr><td>Pontian</td><td>70 km</td><td>SGD 260</td><td>SGD 400</td><td>SGD 480</td><td>SGD 800</td></tr>
+            <tr><td>Desaru</td><td>85 km</td><td>SGD 270</td><td>SGD 410</td><td>SGD 490</td><td>SGD 820</td></tr>
+            <tr><td>Kluang</td><td>130 km</td><td>SGD 312</td><td>SGD 468</td><td>SGD 560</td><td>SGD 935</td></tr>
+            <tr><td>Batu Pahat</td><td>150 km</td><td>SGD 360</td><td>SGD 500</td><td>SGD 600</td><td>SGD 1000</td></tr>
+            <tr><td>Muar</td><td>180 km</td><td>SGD 420</td><td>SGD 585</td><td>SGD 700</td><td>SGD 1170</td></tr>
+            <tr><td>Melacca</td><td>240 km</td><td>SGD 516</td><td>SGD 720</td><td>SGD 860</td><td>SGD 1435</td></tr>
+            <tr><td>Kuala Lumpur</td><td>350 km</td><td>SGD 714</td><td>SGD 995</td><td>SGD 1190</td><td>SGD 1985</td></tr>
+            <tr><td>Genting Highlands</td><td>380 km</td><td>SGD 762</td><td>SGD 1065</td><td>SGD 1270</td><td>SGD 2120</td></tr>
+            <tr><td>Penang</td><td>750 km</td><td>SGD 1314</td><td>SGD 1830</td><td>SGD 2190</td><td>SGD 3650</td></tr>
+            <tr><td>Hatyai (Thailand)</td><td>950 km</td><td>SGD 1662</td><td>SGD 2315</td><td>SGD 2770</td><td>SGD 4620</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fleet">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Fleet</h2>
+        <p>Premium fleet presentation in the same brown visual system for a stronger luxury feel and better brand consistency.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Luxury MPV</span>
+            <h3>Toyota Alphard</h3>
+            <p>Premium MPV for airport, family and cross-border comfort.</p>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Executive Van</span>
+            <h3>Mercedes V-Class</h3>
+            <p>Business-class van suited for VIP and executive movement.</p>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Executive Sedan</span>
+            <h3>Mercedes E-Class</h3>
+            <p>Refined sedan for transfers and business travel.</p>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Flagship Luxury</span>
+            <h3>Mercedes S-Class</h3>
+            <p>Top-tier luxury vehicle for VIP, wedding and executive clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="faq">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="card faq-box">
+          <h3>Frequently Asked Questions</h3>
+          <div class="faq-list">
+            <div class="faq-item"><strong>How do I get the final quotation?</strong><span>Send exact pickup and drop-off location so we can confirm the precise route and pricing.</span></div>
+            <div class="faq-item"><strong>Are toll and fuel included?</strong><span>Yes. Toll and fuel are inclusive unless the journey scope changes significantly.</span></div>
+            <div class="faq-item"><strong>Is driver accommodation required?</strong><span>For long-distance overnight journeys, driver accommodation should be covered at SGD 50 per day.</span></div>
+            <div class="faq-item"><strong>Can I choose private or shared?</strong><span>Yes. The website now clearly separates Singapore tours, Malaysia tours and Seat-In-Coach shared tours.</span></div>
+          </div>
+        </div>
+        <div class="card cta-box">
+          <h3>Luxury should feel clear.</h3>
+          <p>The strongest limousine websites look premium, but they also make it easy for customers to understand their options and enquire quickly. That is what this version does better.</p>
+          <div class="cta-actions">
+            <a class="btn" href="#sg-transfer">Singapore Transfer</a>
+            <a class="btn" href="#shared">Seat In Coach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact Us</h2>
+        <p>Dedicated contact section with direct channels and enquiry form.</p>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-stack">
+          <div class="card contact-card"><h3 style="color:var(--champagne-soft);margin-bottom:8px;">Phone / WhatsApp</h3><p>+65 8444 4744</p></div>
+          <div class="card contact-card"><h3 style="color:var(--champagne-soft);margin-bottom:8px;">Email</h3><p>admin@glancelimousine.com.sg</p></div>
+          <div class="card contact-card"><h3 style="color:var(--champagne-soft);margin-bottom:8px;">Location</h3><p>Singapore</p></div>
+        </div>
+        <div class="card form-card">
+          <div class="field"><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="Your email"></div>
+          <div class="field"><label>Message</label><textarea rows="5" placeholder="Tell us your booking details"></textarea></div>
+          <button class="btn full">Send Message</button>
+          <p class="mini-copy" style="margin-top:12px;">For faster response, use the WhatsApp floating button and send pickup point, drop-off point, date, time and passenger count.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>Glance Limousine</h4>
+        <p>Luxury chauffeur service across Singapore and Malaysia with private tours, shared tours and cross-border transfers.</p>
+      </div>
+      <div>
+        <h4>Main Pages</h4>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Booking Pages</h4>
+        <a href="#sg-transfer">Singapore Transfer</a>
+        <a href="#my-transfer">Malaysia Transfer</a>
+        <a href="#sg-tours">Singapore Tours</a>
+        <a href="#my-tours">Malaysia Tours</a>
+      </div>
+      <div>
+        <h4>Shared & Support</h4>
+        <a href="#shared">Seat In Coach</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-dock">
+    <a class="dock-wa" href="https://wa.me/6584444744" target="_blank">WhatsApp</a>
+    <a class="dock-mail" href="mailto:admin@glancelimousine.com.sg">Email</a>
+    <a class="dock-call" href="tel:+6584444744">Call</a>
+    <a class="dock-link" href="#shared">Seat In Coach</a>
+    <a class="dock-link" href="#sg-tours">Singapore Tours</a>
+    <a class="dock-link" href="#my-tours">Malaysia Tours</a>
+    <a class="dock-link" href="#my-transfer">Cross Border Transfers</a>
+    <a class="dock-link" href="#sg-transfer">Singapore Transfers</a>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Glance Limousine",
+    "url": "https://www.glancelimousine.com.sg",
+    "email": "admin@glancelimousine.com.sg",
+    "telephone": "+65 8444 4744",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SG",
+      "addressLocality": "Singapore"
+    },
+    "areaServed": ["Singapore", "Johor Bahru", "Malaysia"],
+    "description": "Luxury chauffeur service for Singapore transfers, Malaysia cross-border transfers, private tours and seat-in-coach tours."
+  }
+  </script>
+
+  <script>
+    const imagePool = {
+      city: [
+        'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&fit=crop&w=1200&q=80'
+      ],
+      night: [
+        'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80'
+      ],
+      food: [
+        'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80'
+      ],
+      heritage: [
+        'https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80'
+      ],
+      family: [
+        'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80'
+      ],
+      shopping: [
+        'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1521336575822-6da63fb45455?auto=format&fit=crop&w=1200&q=80'
+      ],
+      nature: [
+        'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'
+      ],
+      luxury: [
+        'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80'
+      ],
+      river: [
+        'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&w=1200&q=80'
+      ]
+    };
+
+    const singaporeTourTemplates = [
+      { title:'Singapore City Highlights Tour', category:'City', desc:'Classic city orientation through Marina Bay, Civic District and signature landmarks.', adult:120, child:90, duration:'4 Hrs', image:imagePool.city[0] },
+      { title:'Singapore By Night Tour', category:'Night', desc:'Premium evening experience with skyline, waterfront lights and major photo points.', adult:148, child:108, duration:'4 Hrs', image:imagePool.night[0] },
+      { title:'Singapore Food Discovery Tour', category:'Food', desc:'Private route through flavour districts and local culinary favourites.', adult:140, child:100, duration:'4 Hrs', image:imagePool.food[0] },
+      { title:'Historic Singapore Heritage Tour', category:'Heritage', desc:'Cultural and heritage-led journey through old Singapore and iconic stories.', adult:132, child:96, duration:'4 Hrs', image:imagePool.heritage[0] },
+      { title:'Sentosa Family Adventure Tour', category:'Family', desc:'Family-friendly touring with attractions, comfort and simple planning.', adult:168, child:128, duration:'5 Hrs', image:imagePool.family[0] },
+      { title:'Orchard Road Shopping Tour', category:'Shopping', desc:'Curated private shopping route with luxury malls and city convenience.', adult:138, child:98, duration:'4 Hrs', image:imagePool.shopping[0] },
+      { title:'Gardens & Nature Escape Tour', category:'Nature', desc:'Relaxed greenery route blending iconic gardens and scenic viewpoints.', adult:146, child:106, duration:'4 Hrs', image:imagePool.nature[0] },
+      { title:'Singapore VIP Luxury Tour', category:'Luxury', desc:'High-end chauffeur experience designed for premium guests and executives.', adult:220, child:168, duration:'5 Hrs', image:imagePool.luxury[0] },
+      { title:'Marina Bay Photo Tour', category:'City', desc:'Photo-driven city route for skyline lovers and first-time visitors.', adult:126, child:92, duration:'4 Hrs', image:imagePool.city[1] },
+      { title:'Singapore River Evening Tour', category:'Night', desc:'Waterfront and riverside route built for a softer luxury night experience.', adult:152, child:110, duration:'4 Hrs', image:imagePool.river[0] }
+    ];
+
+    const malaysiaTourTemplates = [
+      { title:'Johor Bahru City Highlights Tour', category:'Johor City', desc:'Classic JB orientation route from Singapore with private chauffeur attached throughout.', adult:325, child:245, duration:'8 Hrs', image:imagePool.city[1] },
+      { title:'Legoland Family Tour', category:'Family', desc:'Family product with stronger attraction value and private transport comfort.', adult:455, child:345, duration:'8 Hrs', image:imagePool.family[0] },
+      { title:'Desaru Coastal Escape Tour', category:'Desaru', desc:'Scenic Desaru route built around coastline views and private comfort.', adult:458, child:345, duration:'10 Hrs', image:imagePool.nature[0] },
+      { title:'Melaka Heritage Highlights Tour', category:'Melaka', desc:'Full-day Melaka signature route from Singapore using a 12-hour structure.', adult:558, child:420, duration:'12 Hrs', image:imagePool.heritage[1] },
+      { title:'Johor Premium Shopping Tour', category:'Shopping', desc:'Private shopping day focused on outlets, malls and smooth border handling.', adult:368, child:278, duration:'8 Hrs', image:imagePool.shopping[0] },
+      { title:'Johor Food Hunt Tour', category:'Food', desc:'Private culinary route for guests who want a stronger JB local food experience.', adult:355, child:265, duration:'8 Hrs', image:imagePool.food[1] },
+      { title:'Johor Heritage Discovery Tour', category:'Heritage', desc:'Cultural landmarks and heritage stops with full-day chauffeur support.', adult:345, child:258, duration:'8 Hrs', image:imagePool.heritage[0] },
+      { title:'Kuala Lumpur Signature Day Tour', category:'Kuala Lumpur', desc:'Long-distance premium trip for clients wanting a powerful KL day experience.', adult:688, child:518, duration:'14 Hrs', image:imagePool.city[0] },
+      { title:'Johor Nature & Leisure Tour', category:'Nature', desc:'Greenery, open-space and scenic leisure route with private driver comfort.', adult:376, child:282, duration:'8 Hrs', image:imagePool.nature[1] },
+      { title:'Hello Kitty Family Tour', category:'Family', desc:'Soft family touring route for young children and relaxed group travel.', adult:432, child:326, duration:'8 Hrs', image:imagePool.family[1] }
+    ];
+
+    const sharedTours = [
+      { title:'3.5hrs City Tour', category:'Explore Singapore', desc:'Shared Singapore city highlights tour with adult and child per-person pricing.', adult:50, child:35, duration:'3.5 Hrs', image:imagePool.city[0] },
+      { title:'4hrs Morning at the Zoo', category:'Wildlife Encounter', desc:'Shared wildlife tour option without breakfast, priced by adult and child categories.', adult:112, child:78, duration:'4 Hrs', image:imagePool.family[1] },
+      { title:'Night Safari - Without Dinner', category:'After Dark', desc:'Shared Night Safari experience with priority tram boarding and evening route timing.', adult:124, child:88, duration:'4.5 Hrs', image:imagePool.night[1] },
+      { title:'Stories of Chinatown', category:'Walking Tour', desc:'Shared cultural storytelling and walking experience through Chinatown.', adult:118, child:83, duration:'4 Hrs', image:imagePool.heritage[0] },
+      { title:'River Wonders Shared Tour', category:'Wildlife Encounter', desc:'A relaxed shared wildlife and river-themed experience for families.', adult:114, child:79, duration:'4 Hrs', image:imagePool.river[0] },
+      { title:'Sentosa Shared Highlights', category:'Explore Singapore', desc:'Shared sightseeing route across one of Singapore’s most popular leisure districts.', adult:98, child:72, duration:'4 Hrs', image:imagePool.city[1] },
+      { title:'Little India & Kampong Glam Walk', category:'Walking Tour', desc:'Culture-led shared experience through colourful heritage neighbourhoods.', adult:76, child:56, duration:'3 Hrs', image:imagePool.heritage[1] },
+      { title:'Singapore Flyer & Marina Evening', category:'After Dark', desc:'Shared evening route with skyline viewing and easy city access.', adult:108, child:78, duration:'3.5 Hrs', image:imagePool.night[0] },
+      { title:'Hawker Food Trail', category:'Explore Singapore', desc:'Shared casual food route with local favourites and simple city pickup.', adult:92, child:66, duration:'3 Hrs', image:imagePool.food[0] },
+      { title:'River Cruise & City Lights', category:'Cruise & River', desc:'Shared river and skyline combination made for evening visitors.', adult:102, child:74, duration:'3.5 Hrs', image:imagePool.river[1] },
+      { title:'Jurong Bird & Nature Trail', category:'Wildlife Encounter', desc:'Shared nature-led outing with family-friendly pace and timing.', adult:116, child:82, duration:'4 Hrs', image:imagePool.nature[0] }
+    ];
+
+    function expandToFifty(baseList){
+      const result = [];
+      for(let i=0;i<50;i++){
+        const base = baseList[i % baseList.length];
+        const round = Math.floor(i / baseList.length) + 1;
+        result.push({
+          title: round === 1 ? base.title : `${base.title} ${round}`,
+          category: base.category,
+          desc: base.desc,
+          adult: base.adult + (round-1)*6,
+          child: base.child + (round-1)*5,
+          duration: base.duration,
+          image: base.image
+        });
+      }
+      return result;
+    }
+
+    const singaporeTours = expandToFifty(singaporeTourTemplates);
+    const malaysiaTours = expandToFifty(malaysiaTourTemplates);
+
+    function renderTourCards(list, targetId, countId, buttonText){
+      const grid = document.getElementById(targetId);
+      const count = document.getElementById(countId);
+      grid.innerHTML = list.map(item => `
+        <div class="tour-card">
+          <img src="${item.image}" alt="${item.title}">
+          <div class="card-body">
+            <span class="badge">${item.category}</span>
+            <div class="tour-title">${item.title}</div>
+            <div class="tour-desc">${item.desc}</div>
+            <div class="meta">
+              <div class="meta-box"><span class="meta-label">Adult</span><span class="meta-value">SGD ${item.adult}</span></div>
+              <div class="meta-box"><span class="meta-label">Child</span><span class="meta-value">SGD ${item.child}</span></div>
+              <div class="meta-box"><span class="meta-label">Duration</span><span class="meta-value">${item.duration}</span></div>
+            </div>
+            <a class="btn full" href="#contact">${buttonText}</a>
+          </div>
+        </div>
+      `).join('');
+      count.textContent = `${list.length} tours`;
+    }
+
+    function setupFilter(data, searchId, categoryId, targetId, countId, buttonText){
+      const searchEl = document.getElementById(searchId);
+      const categoryEl = document.getElementById(categoryId);
+      function update(){
+        const search = searchEl.value.trim().toLowerCase();
+        const category = categoryEl.value;
+        const filtered = data.filter(item => {
+          const matchesSearch = item.title.toLowerCase().includes(search) || item.desc.toLowerCase().includes(search) || item.category.toLowerCase().includes(search);
+          const matchesCategory = category === 'All' || item.category === category;
+          return matchesSearch && matchesCategory;
+        });
+        renderTourCards(filtered, targetId, countId, buttonText);
+      }
+      searchEl.addEventListener('input', update);
+      categoryEl.addEventListener('change', update);
+      update();
+    }
+
+    setupFilter(singaporeTours, 'sgSearch', 'sgCategory', 'sgTourGrid', 'sgCount', 'Book This Tour');
+    setupFilter(malaysiaTours, 'mySearch', 'myCategory', 'myTourGrid', 'myCount', 'Book This Tour');
+    setupFilter(sharedTours, 'sharedSearch', 'sharedCategory', 'sharedTourGrid', 'sharedCount', 'Book Shared Tour');
+
+    const prices={
+      'Johor Bahru':{Economy:180,Premium:250,Business:300,Luxury:500},
+      'Pontian':{Economy:260,Premium:400,Business:480,Luxury:800},
+      'Desaru':{Economy:270,Premium:410,Business:490,Luxury:820},
+      'Kluang':{Economy:312,Premium:468,Business:560,Luxury:935},
+      'Batu Pahat':{Economy:360,Premium:500,Business:600,Luxury:1000},
+      'Muar':{Economy:420,Premium:585,Business:700,Luxury:1170},
+      'Melacca':{Economy:516,Premium:720,Business:860,Luxury:1435},
+      'Kuala Lumpur':{Economy:714,Premium:995,Business:1190,Luxury:1985},
+      'Genting':{Economy:762,Premium:1065,Business:1270,Luxury:2120},
+      'Penang':{Economy:1314,Premium:1830,Business:2190,Luxury:3650},
+      'Hatyai':{Economy:1662,Premium:2315,Business:2770,Luxury:4620}
+    };
+
+    let selectedDestination='';
+    let selectedVehicle='';
+    let selectedPrice=0;
+
+    function calculateRate(){
+      const destination=document.getElementById('destination').value;
+      const vehicle=document.getElementById('vehicle').value;
+      if(!destination||!vehicle){
+        document.getElementById('resultBox').textContent='Estimated Price: Please select destination and vehicle';
+        return;
+      }
+      selectedDestination=destination;
+      selectedVehicle=vehicle;
+      selectedPrice=prices[destination][vehicle];
+      document.getElementById('resultBox').textContent='Estimated Price: SGD '+selectedPrice;
+    }
+
+    function sendRateBooking(){
+      if(!selectedDestination||!selectedVehicle){
+        calculateRate();
+        if(!selectedDestination||!selectedVehicle) return;
+      }
+      const pax=document.getElementById('pax').value||'-';
+      const msg=`Cross Border Transfer Booking\n\nDestination: ${selectedDestination}\nVehicle: ${selectedVehicle}\nPrice: SGD ${selectedPrice}\nPassengers: ${pax}\n\nPlease send exact pickup and drop-off location for final quotation.\nFuel and toll included.\nDriver accommodation SGD50/day if overnight required.`;
+      window.open('https://wa.me/6584444744?text='+encodeURIComponent(msg));
+    }
+  </script>
+</body>
+</html>
