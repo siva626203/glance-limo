@@ -1,1013 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Glance Limousine | Complete Site</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#0c2345;--navy2:#173764;--gold:#d7b56d;--bg:#f6f8fc;--white:#fff;--line:#e4ebf3;--text:#13284a;--muted:#667791;--shadow:0 18px 45px rgba(12,35,69,.08);--dark:#181311;--dark2:#241c18}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
-a{text-decoration:none;color:inherit}.container{width:min(1380px,calc(100% - 32px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(16,33,60,.08)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}.brand small{display:block;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700}.brand strong{display:block;font-size:28px;color:var(--navy);font-family:'Cormorant Garamond',serif}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.navlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:#3d5577;align-items:center}.navlinks a:hover{color:var(--navy)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.2s ease;cursor:pointer}.btn-primary{background:var(--navy);color:#fff}.btn-gold{background:var(--gold);color:#111}.btn-ghost{background:#fff;border-color:#d8e0ea;color:var(--navy)}
-.hero{background:linear-gradient(135deg,#eef3fa 0%,#f7f8fb 38%,#f1eadc 100%);padding:72px 0 56px;border-bottom:1px solid #e2e8f0}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}.eyebrow{display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;border:1px solid #dbe3ed;color:var(--navy2);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}h1{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:.95;letter-spacing:-.02em;margin:18px 0;color:var(--navy)}.gold{color:#bb8a2f}.lead{font-size:18px;line-height:1.9;color:#47607f;max-width:700px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.hero-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}.metric{background:#fff;border:1px solid #dde5ef;border-radius:22px;padding:20px;box-shadow:var(--shadow)}.metric strong{display:block;font-size:28px;color:var(--navy)}.metric span{display:block;color:var(--muted);font-size:13px;margin-top:6px}.hero-card{background:#fff;border:1px solid #dde5ef;border-radius:28px;padding:26px;box-shadow:var(--shadow)}.hero-card h3{font-size:24px;color:var(--navy);margin-bottom:12px}.hero-card p{color:var(--muted);line-height:1.8;font-size:14px}.hero-list{display:grid;gap:12px;margin-top:18px}.hero-item{display:flex;justify-content:space-between;gap:16px;padding:14px 16px;background:#f8fafc;border:1px solid #e5edf5;border-radius:16px}.hero-item strong{display:block;color:var(--navy)}.hero-item small{display:block;color:var(--muted);margin-top:3px}
-.section{padding:70px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:24px}.section-head h2{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--navy)}.section-head p{max-width:760px;color:var(--muted);line-height:1.8}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.card{background:#fff;border-radius:22px;border:1px solid #e7edf5;box-shadow:0 12px 32px rgba(12,35,69,.07);padding:24px}.card h3{color:var(--navy);font-size:24px;margin-bottom:10px}.card p{color:#6c7d97;line-height:1.75}.transfer-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.notice{background:#fff;border:1px solid #e5ebf3;box-shadow:0 10px 30px rgba(12,35,69,.06);border-radius:18px;padding:16px 18px;color:#5f7190;line-height:1.7;font-size:14px;margin:0 0 22px}.notice strong{color:var(--navy)}
-.toolbar{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:0 0 22px;background:#fff;padding:16px;border-radius:18px;border:1px solid #e5ebf3;box-shadow:0 10px 30px rgba(12,35,69,.06)}.toolbar-left{display:flex;gap:12px;flex-wrap:wrap;align-items:center;flex:1}.toolbar input,.toolbar select{padding:12px 14px;border:1px solid #d8e1ec;border-radius:12px;font-family:inherit;min-width:220px;outline:none;background:#fff}.count{font-weight:700;color:#0c2345;font-size:14px}
-.tour-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}.tour-card{background:#fff;border-radius:22px;overflow:hidden;border:1px solid #e7edf5;box-shadow:0 12px 32px rgba(12,35,69,.07);transition:.22s ease}.tour-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(12,35,69,.11)}.tour-card img{width:100%;height:190px;object-fit:cover;display:block}.tour-body{padding:18px}.badge{display:inline-block;background:#f3ead7;color:#9a742c;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;margin-bottom:12px}.title{font-size:20px;font-weight:800;color:#0c2345;line-height:1.35;margin-bottom:8px;min-height:54px}.desc{color:#6c7d97;font-size:14px;line-height:1.65;margin-bottom:15px;min-height:88px}.meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px}.meta-box{background:#f8fafc;border:1px solid #e5edf5;border-radius:14px;padding:10px;text-align:center}.meta-label{display:block;font-size:11px;color:#7a8aa3;margin-bottom:5px;font-weight:700}.meta-value{display:block;font-size:15px;font-weight:800;color:#0c2345}.note-line{font-size:12px;color:#667791;line-height:1.6;margin:8px 0 0;min-height:38px}.btn-block{display:block;width:100%;text-align:center;background:#0c2345;color:#fff;padding:14px 16px;border-radius:14px;font-weight:800}
-.transfer-calc{background:#fff;padding:24px;border-radius:20px;box-shadow:var(--shadow);border:1px solid #e5ebf3}.field{margin-bottom:14px}.field label{display:block;font-weight:700;color:var(--navy);margin-bottom:7px;font-size:14px}.field select,.field input{width:100%;padding:12px;border:1px solid #d8e1ec;border-radius:12px}.result{margin-top:10px;font-size:18px;font-weight:800;color:var(--navy)}.table-wrap{overflow:auto;background:#fff;border-radius:20px;border:1px solid #e5ebf3;box-shadow:var(--shadow)}table{width:100%;border-collapse:collapse;background:#fff}th{background:#0c2345;color:#fff;padding:14px;white-space:nowrap}td{padding:14px;border-bottom:1px solid #eee;white-space:nowrap}
-.fleet-shell{background:linear-gradient(180deg,var(--dark),var(--dark2));color:#fff;border-radius:28px;padding:34px;border:1px solid rgba(255,255,255,.08)}.fleet-shell h2,.fleet-shell h3{color:#f2e4cf}.fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}.fleet-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px}.fleet-box p{color:#e6ddd4}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.blog-card{background:#fff;border:1px solid #e5ebf3;border-radius:22px;padding:24px;box-shadow:var(--shadow)}.blog-card small{display:block;color:#9a742c;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.blog-card h3{font-size:24px;color:var(--navy);margin-bottom:10px}.blog-card p{color:var(--muted);line-height:1.75}
-.faq-grid{display:grid;gap:16px}.faq-item{background:#fff;border:1px solid #e5ebf3;border-radius:20px;padding:22px;box-shadow:var(--shadow)}.faq-item h3{font-size:22px;color:var(--navy);margin-bottom:8px}.faq-item p{color:var(--muted);line-height:1.75}
-.footer{background:#0c2345;color:#fff;margin-top:40px}.footer-inner{max-width:1380px;margin:0 auto;padding:34px 20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}.footer h4{margin-bottom:10px;font-size:18px}.footer p,.footer a{color:rgba(255,255,255,.82);line-height:1.8;font-size:14px}.floating-contact{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:1000}.floating-contact a{text-decoration:none;color:#fff;padding:12px 16px;border-radius:999px;font-size:14px;font-weight:800;box-shadow:0 10px 26px rgba(0,0,0,.15)}.wa-btn{background:#25D366}.call-btn{background:var(--navy)}.mail-btn{background:#8b6b32}
-@media (max-width:1100px){.hero-grid,.transfer-grid,.footer-inner,.blog-grid,.grid4,.fleet-grid{grid-template-columns:1fr 1fr}.hero-metrics{grid-template-columns:1fr 1fr}.section-head{display:block}h1{font-size:54px}}
-@media (max-width:760px){.nav{flex-direction:column;align-items:flex-start}.hero-grid,.transfer-grid,.footer-inner,.blog-grid,.grid4,.fleet-grid,.hero-metrics,.meta{grid-template-columns:1fr}.toolbar input,.toolbar select{min-width:100%}h1{font-size:42px}.section-head h2{font-size:34px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glance Limousine | Singapore Limousine, Malaysia Transfers, Private Tours & Seat-In-Coach</title>
+  <meta name="description" content="Glance Limousine offers luxury chauffeur services in Singapore, cross-border Malaysia transfers, private Singapore tours, private Malaysia tours, and seat-in-coach shared tours." />
+  <meta name="keywords" content="Singapore limousine, Singapore airport transfer, chauffeur service Singapore, Malaysia transfer from Singapore, Johor transfer, Singapore private tours, Malaysia tours, seat in coach Singapore, luxury transport Singapore" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Glance Limousine | Luxury Chauffeur, Tours & Cross-Border Transfers" />
+  <meta property="og:description" content="Luxury chauffeur service across Singapore and Malaysia with private transfers, private tours, and seat-in-coach experiences." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80" />
+  <meta name="theme-color" content="#241c18" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="topbar">
-  <div class="container nav">
-    <div class="brand">
-      <small>Luxury Chauffeur</small>
-      <strong>Glance Limousine</strong>
-      <span>Singapore · Malaysia · Private & Shared Tours</span>
-    </div>
-    <div class="navlinks">
-      <a href="#home">Home</a>
-      <a href="#singapore-transfer">Singapore Transfer</a>
-      <a href="#malaysia-transfer">Malaysia Transfer</a>
-      <a href="#singapore-tours">Singapore Tours</a>
-      <a href="#malaysia-tours">Malaysia Tours</a>
-      <a href="#sit-in-coach">Sit In Coach</a>
-      <a href="#fleet">Fleet</a>
-      <a href="#blog">Blog</a>
-      <a href="#faq">FAQ</a>
-    </div>
-  </div>
-</div>
+  <div class="topbar">Glance Limousine • Singapore Chauffeur • Malaysia Transfer • Private Tours • Seat-In-Coach</div>
 
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow">Premium Transfers Across Singapore & Malaysia</span>
-      <h1>Luxury <span class="gold">transfers</span>, private tours, shared tours and chauffeur travel.</h1>
-      <p class="lead">This one-file build keeps your existing source structure and pricing rules, then adds the missing surrounding pages into a single developer-ready site.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#singapore-transfer">Singapore Transfer</a>
-        <a class="btn btn-gold" href="#malaysia-transfer">Malaysia Transfer</a>
-        <a class="btn btn-ghost" href="#singapore-tours">Browse Tours</a>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-title">Glance Limousine</div>
+        <div class="brand-sub">Singapore · Malaysia · Private Chauffeur</div>
       </div>
-      <div class="hero-metrics">
-        <div class="metric"><strong>50</strong><span>Singapore private tours</span></div>
-        <div class="metric"><strong>50</strong><span>Malaysia private tours</span></div>
-        <div class="metric"><strong>11</strong><span>Shared seat-in-coach tours</span></div>
-        <div class="metric"><strong>24/7</strong><span>WhatsApp enquiry flow</span></div>
-      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#sg-transfer">Singapore Transfer</a>
+        <a href="#my-transfer">Malaysia Transfer</a>
+        <a href="#sg-tours">Singapore Tours</a>
+        <a href="#my-tours">Malaysia Tours</a>
+        <a href="#shared">Seat In Coach</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <div class="hero-card">
-      <h3>Site flow</h3>
-      <div class="hero-list">
-        <div class="hero-item"><div><strong>Singapore Transfer</strong><small>Local point-to-point and airport movement</small></div><span>Service</span></div>
-        <div class="hero-item"><div><strong>Malaysia Transfer</strong><small>Cross-border routes and price calculator</small></div><span>Service</span></div>
-        <div class="hero-item"><div><strong>Singapore Tours</strong><small>50 private tours with adult/child pricing</small></div><span>Tours</span></div>
-        <div class="hero-item"><div><strong>Malaysia Tours</strong><small>50 private tours with minimum 2 adults</small></div><span>Tours</span></div>
-        <div class="hero-item"><div><strong>Sit In Coach</strong><small>Shared tours with per-person adult/child pricing</small></div><span>Shared</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+  </header>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div><h2>Main Services</h2></div>
-      <p>These top-level sections are split cleanly so your developer can later separate them into individual pages without changing the service logic.</p>
-    </div>
-    <div class="grid4">
-      <div class="card"><h3>Singapore Transfer</h3><p>Private point-to-point chauffeur service within Singapore for airport, hotel, corporate, event and VIP movement.</p></div>
-      <div class="card"><h3>Malaysia Transfer</h3><p>Cross-border transfer between Singapore and Johor Bahru, Desaru, Melacca, Kuala Lumpur, Genting, Penang and Hatyai.</p></div>
-      <div class="card"><h3>Singapore Private Tours</h3><p>50 ready-to-book Singapore tours with adult and child pricing displayed on every card.</p></div>
-      <div class="card"><h3>Malaysia Private Tours</h3><p>50 Malaysia tours with minimum 2 adults rule and Malaysia-specific booking notes.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="singapore-transfer">
-  <div class="container">
-    <div class="section-head">
-      <div><h2>Singapore Transfer</h2></div>
-      <p>Separate local transfer service for airport pickup, departure, cruise terminal, hotel, meetings and premium city movement.</p>
-    </div>
-    <div class="transfer-grid">
-      <div class="card">
-        <h3>Use Cases</h3>
-        <p>Airport arrival and departure, hotel transfer, event transport, business meetings, embassy travel and premium family movement.</p>
-        <p style="margin-top:12px">Changi Airport transfer · Hotel to attraction routing · Cruise terminal transfer · Corporate roadshow movement</p>
-      </div>
-      <div class="card">
-        <h3>Vehicle Options</h3>
-        <p>Economy MPV, Premium MPV and Business Van can be attached based on passenger and luggage requirements.</p>
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">Luxury limousine · tours · transfers</div>
+        <h1>Singapore luxury transport with stronger booking pages and full tour visibility.</h1>
+        <p>
+          This version keeps your brown luxury direction, upgrades the hero section, improves SEO structure,
+          makes the whole site feel like one premium brand, and ensures customers can browse the full 50 Singapore tours,
+          full 50 Malaysia tours, and the Seat-In-Coach section clearly.
+        </p>
+        <div class="hero-points">
+          <span>SEO-Focused Hero</span>
+          <span>50 Singapore Tours Visible</span>
+          <span>50 Malaysia Tours Visible</span>
+          <span>Seat In Coach Floating Link Added</span>
+          <span>One Strong Brown Identity</span>
+        </div>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#fleet">View Fleet</a>
-          <a class="btn btn-gold" href="https://wa.me/6584444744" target="_blank">WhatsApp Enquiry</a>
+          <a class="btn" href="#contact">Book Chauffeur Now</a>
+          <a class="btn ghost" href="#sg-tours">View Singapore Tours</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Built to sell better</h3>
+        <p>The best limousine website is not only beautiful. It must rank for the right keywords, show clear service categories, make routes easy to understand, and move customers to WhatsApp fast.</p>
+        <p>This version improves your first impression, increases service clarity, and uses full-tour rendering so your customer can actually see the complete product range instead of only a few cards.</p>
+        <div class="hero-card-grid">
+          <div class="metric"><strong>50</strong><span>Singapore Tours</span></div>
+          <div class="metric"><strong>50</strong><span>Malaysia Tours</span></div>
+          <div class="metric"><strong>11</strong><span>Seat-In-Coach Tours</span></div>
+          <div class="metric"><strong>24/7</strong><span>Booking Ready</span></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="malaysia-transfer">
-  <div class="container">
-    <div class="section-head">
-      <div><h2>Malaysia Transfer</h2></div>
-      <p>Cross-border transfer page with the same destination list, rate matrix and overnight driver accommodation note from your transfer source file.</p>
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Services</h2>
+        <p>A clean service structure that shows what you actually sell and where the user should go next. This is stronger for conversion and stronger for SEO because each service is clearly segmented.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card service-card"><div class="service-icon">01</div><h3>Singapore Transfer</h3><p>Airport, hotel, hourly charter and point-to-point private limousine services in Singapore.</p></div>
+        <div class="card service-card"><div class="service-icon">02</div><h3>Malaysia Transfer</h3><p>Cross-border private transfer services from Singapore to Johor, Melaka, Kuala Lumpur and beyond.</p></div>
+        <div class="card service-card"><div class="service-icon">03</div><h3>Singapore Tours</h3><p>Private chauffeur tours for city, family, night, heritage, shopping and VIP travel.</p></div>
+        <div class="card service-card"><div class="service-icon">04</div><h3>Malaysia Tours</h3><p>Private same-day Malaysia touring from Singapore with driver attached throughout.</p></div>
+      </div>
+      <div style="height:24px"></div>
+      <div class="grid-4">
+        <div class="card service-card"><div class="service-icon">05</div><h3>Seat In Coach</h3><p>Shared tours with adult and child pricing for clients who want guided value experiences.</p></div>
+      </div>
     </div>
-    <div class="transfer-grid">
-      <div class="transfer-calc">
-        <h3 style="margin-bottom:14px;color:var(--navy)">Transfer Price Calculator</h3>
-        <div class="field"><label>Destination</label><select id="destination"></select></div>
-        <div class="field">
-          <label>Vehicle</label>
-          <select id="vehicle">
-            <option value="">Select Vehicle</option>
-            <option>Economy</option>
-            <option>Premium</option>
-            <option>Business</option>
-            <option>Luxury</option>
+  </section>
+
+  <section class="section alt" id="sg-transfer">
+    <div class="container">
+      <div class="section-head">
+        <h2>Singapore Transfer</h2>
+        <p>Private transfer page for airport arrival, departure, hotel transfer, business trips and point-to-point movement in Singapore. Vehicle order is now set from <strong>Luxury to Economy</strong>. Each vehicle card now uses a cleaner <strong>View and Book</strong> action that sends the customer to the fleet section.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Luxury</span>
+            <h3>Mercedes S-Class</h3>
+            <p>Flagship luxury chauffeur choice for VIP and premium executive bookings.</p>
+            <div class="action-row">
+              <button class="btn full" onclick="openFleetPage('Mercedes S-Class')">View and Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Business</span>
+            <h3>Mercedes V-Class</h3>
+            <p>Business-class van for executives, hotel guests and VIP movement.</p>
+            <div class="action-row">
+              <button class="btn full" onclick="openFleetPage('Mercedes V-Class')">View and Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Premium</span>
+            <h3>Toyota Alphard / Vellfire</h3>
+            <p>Popular luxury MPV for airport, hotel and family transport.</p>
+            <div class="action-row">
+              <button class="btn full" onclick="openFleetPage('Toyota Alphard / Vellfire')">View and Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Economy</span>
+            <h3>Toyota Noah</h3>
+            <p>Airport transfer and city transfer for practical premium travellers.</p>
+            <div class="action-row">
+              <button class="btn full" onclick="openFleetPage('Toyota Noah')">View and Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sg-tours">
+    <div class="container">
+      <div class="section-head">
+        <h2>Singapore Tours</h2>
+        <p>All 50 Singapore tours are rendered below, not just a small preview. Each tour is now clearly marked as either Full Driver or Two-Way Transfer, so customers can immediately see whether the chauffeur stays throughout the itinerary or only sends and fetches back.</p>
+      </div>
+      <div class="notice"><strong>Important booking rule:</strong> Minimum booking is <strong>2 adults</strong> for private Singapore tours. A small car indicator now shows whether the tour is <strong>Full Driver</strong> or <strong>Two-Way Transfer</strong>. Click <strong>View This Tour</strong> to open the detailed tour block with description, inclusions, exclusions, pricing and booking options.</div>
+      <div style="height:22px"></div>
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <input type="text" id="sgSearch" placeholder="Search Singapore tours..." />
+          <select id="sgCategory">
+            <option value="All">All Categories</option>
+            <option value="City">City</option>
+            <option value="Night">Night</option>
+            <option value="Food">Food</option>
+            <option value="Heritage">Heritage</option>
+            <option value="Family">Family</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Nature">Nature</option>
+            <option value="Luxury">Luxury</option>
           </select>
         </div>
-        <div class="field"><label>Passengers</label><input type="number" id="pax" placeholder="Number of passengers"></div>
-        <div class="result" id="result"></div>
-        <div class="hero-actions">
-          <button class="btn btn-primary" onclick="calculateTransfer()">Calculate Price</button>
-          <button class="btn btn-gold" onclick="sendTransferBooking()">Send WhatsApp Booking</button>
+        <div class="count" id="sgCount">50 tours</div>
+      </div>
+      <div class="tour-grid" id="sgTourGrid"></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="my-tours">
+    <div class="container">
+      <div class="section-head">
+        <h2>Malaysia Tours</h2>
+        <p>All 50 Malaysia tours are visible here in the same premium layout. Johor, Desaru, Legoland, shopping, heritage and long-distance routes all sit inside one consistent system.</p>
+      </div>
+      <div class="notice"><strong>Important booking rule:</strong> Minimum booking is <strong>2 adults</strong> for private Malaysia tours. Click <strong>View This Tour</strong> to open the detailed tour block with description, inclusions, exclusions, pricing and payment buttons. Johor starts from <strong>8 hours</strong> and Melaka from <strong>12 hours</strong>.</div>
+      <div style="height:22px"></div>
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <input type="text" id="mySearch" placeholder="Search Malaysia tours..." />
+          <select id="myCategory">
+            <option value="All">All Categories</option>
+            <option value="Johor City">Johor City</option>
+            <option value="Family">Family</option>
+            <option value="Nature">Nature</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Food">Food</option>
+            <option value="Heritage">Heritage</option>
+            <option value="Desaru">Desaru</option>
+            <option value="Melaka">Melaka</option>
+            <option value="Kuala Lumpur">Kuala Lumpur</option>
+          </select>
         </div>
-        <div class="notice" style="margin-top:18px">
-          <strong>Important Booking Information</strong><br>
-          Please send the exact pickup and drop-off location for final quotation.
-          All prices are in SGD.
-          Fuel and toll charges are included.
-          For long distance journeys requiring overnight stay, driver accommodation must be covered at SGD50 per day.
+        <div class="count" id="myCount">50 tours</div>
+      </div>
+      <div class="tour-grid" id="myTourGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="shared">
+    <div class="container">
+      <div class="section-head">
+        <h2>Seat In Coach Tours</h2>
+        <p>This is a real shared-tour section with adult and child pricing and its own floating quick link.</p>
+      </div>
+      <div class="notice">
+        <strong>Important:</strong> These are <strong>seat-in-coach / shared tours</strong> with <strong>adult</strong> and <strong>child</strong> pricing only. Keep this separate from the private chauffeur tour pages. Seat In Coach products also open a full detail block and support Pay Now or Add to Cart.
+      </div>
+      <div style="height:22px"></div>
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <input type="text" id="sharedSearch" placeholder="Search seat in coach tours..." />
+          <select id="sharedCategory">
+            <option value="All">All Categories</option>
+            <option value="Explore Singapore">Explore Singapore</option>
+            <option value="Wildlife Encounter">Wildlife Encounter</option>
+            <option value="After Dark">After Dark</option>
+            <option value="Walking Tour">Walking Tour</option>
+            <option value="Cruise & River">Cruise & River</option>
+          </select>
         </div>
+        <div class="count" id="sharedCount">11 tours</div>
       </div>
+      <div class="tour-grid" id="sharedTourGrid"></div>
+    </div>
+  </section>
 
-      <div class="table-wrap">
-        <table>
-          <tr><th>Destination</th><th>Distance</th><th>Economy</th><th>Premium</th><th>Business</th><th>Luxury</th></tr>
-          <tr><td>Johor Bahru</td><td>30 km</td><td>180</td><td>250</td><td>300</td><td>500</td></tr>
-          <tr><td>Pontian</td><td>70 km</td><td>260</td><td>400</td><td>480</td><td>800</td></tr>
-          <tr><td>Desaru</td><td>85 km</td><td>270</td><td>410</td><td>490</td><td>820</td></tr>
-          <tr><td>Kluang</td><td>130 km</td><td>312</td><td>468</td><td>560</td><td>935</td></tr>
-          <tr><td>Batu Pahat</td><td>150 km</td><td>360</td><td>500</td><td>600</td><td>1000</td></tr>
-          <tr><td>Muar</td><td>180 km</td><td>420</td><td>585</td><td>700</td><td>1170</td></tr>
-          <tr><td>Melacca</td><td>240 km</td><td>516</td><td>720</td><td>860</td><td>1435</td></tr>
-          <tr><td>Kuala Lumpur</td><td>350 km</td><td>714</td><td>995</td><td>1190</td><td>1985</td></tr>
-          <tr><td>Genting Highlands</td><td>380 km</td><td>762</td><td>1065</td><td>1270</td><td>2120</td></tr>
-          <tr><td>Penang</td><td>750 km</td><td>1314</td><td>1830</td><td>2190</td><td>3650</td></tr>
-          <tr><td>Hatyai</td><td>950 km</td><td>1662</td><td>2315</td><td>2770</td><td>4620</td></tr>
-        </table>
+  <section class="section alt" id="my-transfer">
+    <div class="container">
+      <div class="section-head">
+        <h2>Malaysia Transfer / Cross Border</h2>
+        <p>One-way rates page for Malaysia and Thailand routes, kept in rate-table logic for customers who want a fast quotation.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="singapore-tours">
-  <div class="container">
-    <div class="section-head">
-      <div><h2>Singapore Private Tours</h2></div>
-      <p>Exact tour count, categories and adult/child pricing structure are preserved from your Singapore tours source file.</p>
-    </div>
-    <div class="toolbar">
-      <div class="toolbar-left">
-        <input type="text" id="sgSearch" placeholder="Search tours...">
-        <select id="sgCategory"><option value="all">All Categories</option></select>
-      </div>
-      <div class="count" id="sgCount">50 tours</div>
-    </div>
-    <div class="tour-grid" id="sgGrid"></div>
-  </div>
-</section>
-
-<section class="section" id="malaysia-tours">
-  <div class="container">
-    <div class="section-head">
-      <div><h2>Malaysia Private Tours</h2></div>
-      <p>These tour cards keep the Malaysia booking rule: minimum 2 adults. Johor Bahru tours start from 8 hours and Melaka tours start from 12 hours.</p>
-    </div>
-    <div class="notice">
-      <strong>Important booking rule:</strong>
-      Minimum booking is <strong>2 adults</strong> for all Malaysia tours.
-      Johor Bahru tours are structured from a minimum of <strong>8 hours</strong>.
-      Melaka tours are structured from a minimum of <strong>12 hours</strong>.
-      Vehicle upgrade, guide, photographer and baby seat options can be handled on the next booking step.
-    </div>
-    <div class="toolbar">
-      <div class="toolbar-left">
-        <input type="text" id="mySearch" placeholder="Search Malaysia tours...">
-        <select id="myCategory"><option value="all">All Categories</option></select>
-      </div>
-      <div class="count" id="myCount">50 tours</div>
-    </div>
-    <div class="tour-grid" id="myGrid"></div>
-  </div>
-</section>
-
-<section class="section" id="sit-in-coach">
-  <div class="container">
-    <div class="section-head">
-      <div><h2>Seat-In-Coach Shared Tours</h2></div>
-      <p>This section keeps the shared-tour logic: per-person adult and child pricing, with no minimum 2 adults rule displayed.</p>
-    </div>
-    <div class="notice">
-      <strong>Important:</strong>
-      This page is for <strong>shared tours / seat-in-coach</strong>, so pricing is shown only by <strong>adult</strong> and <strong>child</strong>.
-      No minimum 2 adults rule is displayed on this website page.
-    </div>
-    <div class="toolbar">
-      <div class="toolbar-left">
-        <input type="text" id="sicSearch" placeholder="Search shared tours...">
-        <select id="sicCategory"><option value="all">All Categories</option></select>
-      </div>
-      <div class="count" id="sicCount">11 tours</div>
-    </div>
-    <div class="tour-grid" id="sicGrid"></div>
-  </div>
-</section>
-
-<section class="section" id="fleet">
-  <div class="container">
-    <div class="fleet-shell">
-      <div class="section-head" style="margin-bottom:0">
-        <div><h2 style="color:#f2e4cf">Our Fleet</h2></div>
-        <p style="color:#e6ddd4">Established in 1937, Glance Limousine proudly stands as the oldest limousine company in Singapore, serving embassies, hotels, financial institutions, royal households and global corporations.</p>
-      </div>
-      <div class="fleet-grid">
-        <div class="fleet-box"><h3>Economy MPV</h3><p>Comfortable airport and local transfer option for practical family and business movement.</p></div>
-        <div class="fleet-box"><h3>Premium MPV</h3><p>Elevated interior feel for premium guests, hotel passengers and executive travel.</p></div>
-        <div class="fleet-box"><h3>Business Van</h3><p>Best for larger families, VIP groups and cross-border road journeys with more luggage.</p></div>
-      </div>
-      <div class="notice" style="margin-top:24px;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff">
-        Our journey began with the British Royal Air Force at RAF Changi and evolved into premium chauffeured transport across Singapore and Malaysia.
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="blog">
-  <div class="container">
-    <div class="section-head">
-      <div><h2>Blog</h2></div>
-      <p>Added around your existing service content to support SEO and internal linking without altering the core source pages.</p>
-    </div>
-    <div class="blog-grid">
-      <article class="blog-card"><small>Singapore Transfer</small><h3>Best Private Airport Transfer in Singapore for Families and Business Travellers</h3><p>Supports airport, local transfer and premium chauffeur intent.</p></article>
-      <article class="blog-card"><small>Malaysia Transfer</small><h3>Singapore to Johor Bahru Private Car vs Public Transport</h3><p>Commercial comparison content that feeds your cross-border transfer page.</p></article>
-      <article class="blog-card"><small>Singapore Tours</small><h3>Private Singapore Tour vs Group Tour: Which Is Better?</h3><p>Useful long-tail article for travellers comparing private and shared options.</p></article>
-      <article class="blog-card"><small>Malaysia Tours</small><h3>Top Malaysia Day Trips from Singapore by Private Chauffeur</h3><p>Supports Johor, Desaru and Melaka search intent.</p></article>
-      <article class="blog-card"><small>Corporate Travel</small><h3>Why Executive Chauffeur Service Matters for Meetings and VIP Guests</h3><p>Helps corporate clients understand the premium value of managed transport.</p></article>
-      <article class="blog-card"><small>Luxury Travel</small><h3>How to Plan a Premium Singapore and Malaysia Itinerary with Private Car</h3><p>Bridges transfers and tours into one strong travel funnel.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-head">
-      <div><h2>FAQ</h2></div>
-      <p>Added as a separate section around the preserved tour and transfer rules.</p>
-    </div>
-    <div class="faq-grid">
-      <article class="faq-item"><h3>Are Singapore Transfer and Malaysia Transfer separate services?</h3><p>Yes. Local Singapore transfer and cross-border Malaysia transfer should stay separate in navigation, forms and booking logic.</p></article>
-      <article class="faq-item"><h3>Do all Malaysia private tours require minimum 2 adults?</h3><p>Yes. Malaysia tours are presented with a minimum 2 adults booking rule.</p></article>
-      <article class="faq-item"><h3>Do sit-in-coach tours show the same rule?</h3><p>No. Shared seat-in-coach tours are priced per person with adult and child rates only.</p></article>
-      <article class="faq-item"><h3>Is there an overnight driver charge on Malaysia transfer?</h3><p>Yes. For long distance journeys requiring overnight stay, driver accommodation must be covered at SGD50 per day.</p></article>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div><h4>Glance Limousine</h4><p>Premium transfers across Singapore & Malaysia with dedicated sections for transport and attractions.</p></div>
-    <div><h4>Contact</h4><p>WhatsApp / Call: +65 8444 4744<br>Email: admin@glancelimousine.com.sg</p></div>
-    <div><h4>Site Sections</h4><p>Singapore Transfer • Malaysia Transfer • Singapore Tours • Malaysia Tours • Sit In Coach • Fleet • Blog • FAQ</p></div>
-  </div>
-</footer>
-
-<div class="floating-contact">
-  <a class="wa-btn" href="https://wa.me/6584444744" target="_blank">WhatsApp</a>
-  <a class="call-btn" href="tel:+6584444744">Call Now</a>
-  <a class="mail-btn" href="mailto:admin@glancelimousine.com.sg">Email</a>
-</div>
-
-<script>
-const singaporeTours = [
-{
-id:1,
-category:"City",
-name:"Singapore City Highlights Tour",
-description:"A classic orientation tour covering Merlion Park, Civic District, Marina Bay and signature city landmarks.",
-adult:120,
-child:90,
-hours:4,
-image:"https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:2,
-category:"City",
-name:"Marina Bay Iconic Landmarks Tour",
-description:"A premium chauffeur tour around Marina Bay Sands, the waterfront promenade and the city skyline.",
-adult:130,
-child:95,
-hours:4,
-image:"https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:3,
-category:"City",
-name:"Civic District & Colonial Singapore Tour",
-description:"Explore the elegant colonial side of Singapore with a comfortable private vehicle and curated route.",
-adult:125,
-child:92,
-hours:4,
-image:"https://images.unsplash.com/photo-1496939376851-89342e90adcd?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:4,
-category:"City",
-name:"Modern Singapore Skyline Tour",
-description:"A sleek city route focusing on architecture, skyline views, financial district and luxury urban sights.",
-adult:135,
-child:98,
-hours:4,
-image:"https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:5,
-category:"City",
-name:"Instagram Singapore Photo Tour",
-description:"Designed for guests who want the city’s most photogenic locations with flexible private stops.",
-adult:145,
-child:105,
-hours:5,
-image:"https://images.unsplash.com/photo-1526483360412-f4dbaf036963?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:6,
-category:"Night",
-name:"Marina Bay Night Experience",
-description:"A glamorous evening drive through Marina Bay, city lights and premium waterfront attractions.",
-adult:150,
-child:110,
-hours:4,
-image:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:7,
-category:"Night",
-name:"Singapore by Night Tour",
-description:"Discover the city after dark with skyline views, vibrant districts and night-time energy.",
-adult:148,
-child:108,
-hours:4,
-image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:8,
-category:"Night",
-name:"Clarke Quay & River Night Tour",
-description:"Enjoy a stylish evening route covering Singapore River, Clarke Quay and illuminated landmarks.",
-adult:155,
-child:112,
-hours:4,
-image:"https://images.unsplash.com/photo-1519817914152-22f90e52c1cb?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:9,
-category:"Night",
-name:"Gardens by the Bay Night Tour",
-description:"A popular evening itinerary featuring the supertrees, waterfront and iconic night atmosphere.",
-adult:160,
-child:118,
-hours:4,
-image:"https://images.unsplash.com/photo-1496939376851-89342e90adcd?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:10,
-category:"Night",
-name:"Singapore Night Photography Tour",
-description:"Perfect for guests who want city lights, skyline framing and dramatic night backdrops.",
-adult:175,
-child:125,
-hours:5,
-image:"https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:11,
-category:"Food",
-name:"Singapore Food Discovery Tour",
-description:"A private route into Singapore’s diverse food culture, hawker highlights and signature flavours.",
-adult:140,
-child:100,
-hours:4,
-image:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:12,
-category:"Food",
-name:"Hawker Centre Gourmet Tour",
-description:"Explore famous hawker food culture with a chauffeur-led comfort experience between stops.",
-adult:145,
-child:105,
-hours:4,
-image:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:13,
-category:"Food",
-name:"Chinatown Food & Culture Tour",
-description:"A rich blend of heritage streets, traditional flavours and local stories in Chinatown.",
-adult:142,
-child:102,
-hours:4,
-image:"https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:14,
-category:"Food",
-name:"Little India Spice Route Tour",
-description:"A colourful food and culture journey through aromatic streets and lively heritage corners.",
-adult:143,
-child:103,
-hours:4,
-image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:15,
-category:"Food",
-name:"Katong & Joo Chiat Food Trail",
-description:"An elegant East Coast culinary route known for Peranakan flavours and local character.",
-adult:150,
-child:110,
-hours:5,
-image:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:16,
-category:"Heritage",
-name:"Singapore Heritage Trail",
-description:"A private cultural experience spanning Chinatown, Kampong Glam and historic districts.",
-adult:145,
-child:105,
-hours:4,
-image:"https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:17,
-category:"Heritage",
-name:"Peranakan Heritage Experience",
-description:"Discover Singapore’s Peranakan legacy, architecture and refined cultural narratives.",
-adult:152,
-child:110,
-hours:4,
-image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:18,
-category:"Heritage",
-name:"Colonial Singapore Heritage Tour",
-description:"A beautifully structured route around colonial landmarks, civic history and heritage spaces.",
-adult:150,
-child:108,
-hours:4,
-image:"https://images.unsplash.com/photo-1496939376851-89342e90adcd?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:19,
-category:"Heritage",
-name:"Temple & Traditions Tour",
-description:"A spiritual and architectural journey through temples, heritage sites and local traditions.",
-adult:148,
-child:106,
-hours:4,
-image:"https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:20,
-category:"Heritage",
-name:"Singapore Storytelling Journey",
-description:"An interpretive heritage route blending city history, local identity and iconic districts.",
-adult:155,
-child:112,
-hours:5,
-image:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:21,
-category:"Family",
-name:"Singapore Family Fun Tour",
-description:"An easy-going family route designed around kid-friendly stops and a comfortable private vehicle.",
-adult:155,
-child:112,
-hours:5,
-image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:22,
-category:"Family",
-name:"Sentosa Family Adventure Tour",
-description:"Private transfer-based fun around Sentosa attractions and scenic island highlights.",
-adult:165,
-child:120,
-hours:5,
-image:"https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:23,
-category:"Family",
-name:"Singapore Zoo Family Tour",
-description:"A premium family chauffeur experience centred around zoo and wildlife-style attractions.",
-adult:170,
-child:125,
-hours:5,
-image:"https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:24,
-category:"Family",
-name:"Kids Discovery Singapore Tour",
-description:"Tailored for parents and children wanting flexible sightseeing with lower walking pressure.",
-adult:160,
-child:118,
-hours:5,
-image:"https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:25,
-category:"Family",
-name:"Sentosa + Marina Bay Family Combo",
-description:"A higher-value route combining family excitement with classic Singapore highlights.",
-adult:178,
-child:130,
-hours:6,
-image:"https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:26,
-category:"Nature",
-name:"Gardens by the Bay Scenic Tour",
-description:"A garden-focused premium route through one of Singapore’s most iconic green attractions.",
-adult:145,
-child:105,
-hours:4,
-image:"https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:27,
-category:"Nature",
-name:"Singapore Botanic Gardens Tour",
-description:"A gentle, elegant route through botanical beauty, tropical greenery and scenic escape spots.",
-adult:142,
-child:102,
-hours:4,
-image:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:28,
-category:"Nature",
-name:"Nature & Coastline Singapore Tour",
-description:"Combines softer scenic routes, greenery and waterside views across the city.",
-adult:148,
-child:106,
-hours:4,
-image:"https://images.unsplash.com/photo-1519046904884-53103b34b3fb?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:29,
-category:"Nature",
-name:"Eco Singapore Discovery Tour",
-description:"A greener-side city route built around open spaces, sustainability and nature-themed stops.",
-adult:150,
-child:108,
-hours:4,
-image:"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:30,
-category:"Nature",
-name:"Southern Islands Scenic Tour",
-description:"A scenic private route inspired by Singapore’s coastal and island-side atmosphere.",
-adult:165,
-child:120,
-hours:5,
-image:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:31,
-category:"Shopping",
-name:"Orchard Road Luxury Shopping Tour",
-description:"A refined retail route for premium shoppers wanting comfort, flexibility and premium drop-offs.",
-adult:150,
-child:108,
-hours:4,
-image:"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:32,
-category:"Shopping",
-name:"Singapore Shopping & Lifestyle Tour",
-description:"A private urban route covering top shopping districts, design spots and premium lifestyle venues.",
-adult:155,
-child:112,
-hours:4,
-image:"https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:33,
-category:"Shopping",
-name:"Luxury Malls & Designer Tour",
-description:"For guests focused on designer labels, luxury malls and a seamless premium shopping day.",
-adult:165,
-child:120,
-hours:5,
-image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:34,
-category:"Shopping",
-name:"Bugis & Haji Lane Shopping Tour",
-description:"A stylish route combining local fashion, boutique finds and colourful district browsing.",
-adult:148,
-child:106,
-hours:4,
-image:"https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:35,
-category:"Shopping",
-name:"Outlet & Bargain Finds Tour",
-description:"A more value-driven shopping experience with private transport comfort throughout the day.",
-adult:152,
-child:110,
-hours:5,
-image:"https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:36,
-category:"Luxury",
-name:"Singapore Elite Lifestyle Tour",
-description:"An upper-tier luxury route crafted for premium travellers, VIP guests and concierge-level clients.",
-adult:185,
-child:135,
-hours:5,
-image:"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:37,
-category:"Luxury",
-name:"VIP Singapore Prestige Tour",
-description:"A more exclusive private tour with premium pacing, elegant routing and luxury-focused positioning.",
-adult:198,
-child:145,
-hours:6,
-image:"https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:38,
-category:"Luxury",
-name:"Five-Star Singapore Experience",
-description:"Designed for top-end guests who want comfort, image and premium city exposure.",
-adult:205,
-child:150,
-hours:6,
-image:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:39,
-category:"Luxury",
-name:"Romantic Luxury Singapore Tour",
-description:"A polished city route ideal for couples wanting elevated styling and premium night ambience.",
-adult:195,
-child:142,
-hours:5,
-image:"https://images.unsplash.com/photo-1516589091380-5d6011d18f68?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:40,
-category:"Luxury",
-name:"Ultra Premium City & Marina Tour",
-description:"A chauffeur-driven Singapore showcase with stronger luxury positioning and visual appeal.",
-adult:215,
-child:155,
-hours:6,
-image:"https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:41,
-category:"Entertainment",
-name:"Singapore Nightlife Discovery Tour",
-description:"A private evening route covering stylish nightlife zones, entertainment districts and city buzz.",
-adult:175,
-child:125,
-hours:5,
-image:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:42,
-category:"Entertainment",
-name:"Sentosa Entertainment Tour",
-description:"A vibrant route built for guests wanting island-based fun and premium transport convenience.",
-adult:180,
-child:130,
-hours:5,
-image:"https://images.unsplash.com/photo-1496372412473-e8548ffd82bc?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:43,
-category:"Entertainment",
-name:"Singapore Attractions Combo Tour",
-description:"A flexible entertainment-style route linking key attraction zones with private chauffeur comfort.",
-adult:185,
-child:135,
-hours:6,
-image:"https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:44,
-category:"Entertainment",
-name:"City Lights & Entertainment Tour",
-description:"Blends high-energy entertainment with signature evening city visuals and premium pacing.",
-adult:188,
-child:138,
-hours:6,
-image:"https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:45,
-category:"Entertainment",
-name:"Singapore Leisure & Show Tour",
-description:"For guests who want leisure attractions, premium drop-offs and a smooth entertainment-focused route.",
-adult:192,
-child:140,
-hours:6,
-image:"https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:46,
-category:"City",
-name:"Full-Day Best of Singapore Tour",
-description:"A broad and polished all-day route covering major landmarks, premium districts and iconic attractions.",
-adult:240,
-child:175,
-hours:8,
-image:"https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:47,
-category:"Food",
-name:"Full-Day Food & Culture Singapore Tour",
-description:"A richer, longer-format food experience with multiple districts and stronger storytelling depth.",
-adult:245,
-child:180,
-hours:8,
-image:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:48,
-category:"Luxury",
-name:"Singapore Grand Luxury Experience",
-description:"A flagship full-day premium route for high-end guests seeking a showcase of the city in comfort.",
-adult:280,
-child:205,
-hours:9,
-image:"https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:49,
-category:"Entertainment",
-name:"Ultimate Singapore Attractions Tour",
-description:"A full-day attractions route designed to showcase the city’s strongest entertainment appeal.",
-adult:260,
-child:190,
-hours:8,
-image:"https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80"
-},
-{
-id:50,
-category:"Luxury",
-name:"Ultimate Singapore VIP Signature Tour",
-description:"The flagship private luxury experience with full flexibility, premium styling and prestige positioning.",
-adult:380,
-child:280,
-hours:10,
-image:"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80"
-}
-];
-
-const malaysiaTours = [
-{id:1,category:"Johor City",name:"Johor Bahru City Highlights Tour",description:"Classic JB orientation tour from Singapore with private chauffeur attached throughout. Minimum 2 adults.",adult:325,child:245,hours:8,image:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80"},
-{id:2,category:"Johor City",name:"Johor Bahru Old Town Tour",description:"Old streets, heritage corners and local atmosphere in an 8-hour chauffeur-attached format. Minimum 2 adults.",adult:330,child:248,hours:8,image:"https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"},
-{id:3,category:"Johor City",name:"Johor Bahru Landmark Tour",description:"A JB landmark route with private cross-border comfort and waiting time included. Minimum 2 adults.",adult:335,child:252,hours:8,image:"https://images.unsplash.com/photo-1525951287970-a9408e7290cb?auto=format&fit=crop&w=1200&q=80"},
-{id:4,category:"Johor City",name:"Johor Bahru Instagram Photo Tour",description:"A visual city route for guests wanting premium photo stops and flexible timing. Minimum 2 adults.",adult:340,child:256,hours:8,image:"https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"},
-{id:5,category:"Johor City",name:"Johor Bahru Premium Explorer Tour",description:"A stronger-value JB chauffeur product covering city scenes, lifestyle districts and comfort travel. Minimum 2 adults.",adult:348,child:262,hours:8,image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"},
-{id:6,category:"Food",name:"Johor Foodie Trail Tour",description:"A Malaysia food route with private vehicle and waiting time built in. Minimum 2 adults.",adult:355,child:268,hours:8,image:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"},
-{id:7,category:"Food",name:"Johor Seafood & Local Eats Tour",description:"Private chauffeur attached while guests explore famous local food and seafood spots. Minimum 2 adults.",adult:360,child:270,hours:8,image:"https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80"},
-{id:8,category:"Food",name:"Johor Cafe Hopping Tour",description:"A modern lifestyle route built around cafes, dessert spots and local food stops. Minimum 2 adults.",adult:365,child:274,hours:8,image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
-{id:9,category:"Food",name:"Johor Street Food Discovery Tour",description:"A local flavour route designed for guests who want a premium private car around food districts. Minimum 2 adults.",adult:370,child:278,hours:8,image:"https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80"},
-{id:10,category:"Food",name:"Johor Gourmet Premium Tour",description:"A more upscale culinary Malaysia tour with private transport and flexible pacing. Minimum 2 adults.",adult:378,child:284,hours:8,image:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80"},
-{id:11,category:"Shopping",name:"Johor Bahru Shopping Tour",description:"A high-demand private shopping route from Singapore to Johor with chauffeur waiting time. Minimum 2 adults.",adult:355,child:268,hours:8,image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80"},
-{id:12,category:"Shopping",name:"Premium Mall Shopping Tour",description:"A private chauffeur-attached route focused on malls and shopping districts in Johor. Minimum 2 adults.",adult:362,child:272,hours:8,image:"https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80"},
-{id:13,category:"Shopping",name:"Outlet Shopping Escape Tour",description:"Malaysia shopping route tailored for brand outlets and bargain-seeking guests. Minimum 2 adults.",adult:368,child:276,hours:8,image:"https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=1200&q=80"},
-{id:14,category:"Shopping",name:"Johor Fashion & Lifestyle Tour",description:"Shopping, lifestyle stops and premium pacing from Singapore with private vehicle attached. Minimum 2 adults.",adult:372,child:280,hours:8,image:"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80"},
-{id:15,category:"Shopping",name:"Luxury Shopping in Johor Tour",description:"A stronger-value retail and luxury shopping route for premium guests. Minimum 2 adults.",adult:385,child:288,hours:8,image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80"},
-{id:16,category:"Family",name:"Legoland Family Tour",description:"A family-focused day route from Singapore to Legoland with chauffeur attached. Minimum 2 adults.",adult:395,child:298,hours:8,image:"https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"},
-{id:17,category:"Family",name:"Johor Family Fun Day Tour",description:"Designed for families looking for easy cross-border movement and child-friendly attractions. Minimum 2 adults.",adult:388,child:292,hours:8,image:"https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80"},
-{id:18,category:"Family",name:"Johor Theme Park Tour",description:"Private transport to theme park-style attractions and family entertainment zones. Minimum 2 adults.",adult:398,child:300,hours:8,image:"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80"},
-{id:19,category:"Family",name:"Johor Kids Adventure Tour",description:"A playful family route with flexible stops and private transfer ease. Minimum 2 adults.",adult:392,child:296,hours:8,image:"https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80"},
-{id:20,category:"Family",name:"Desaru Family Resort Day Tour",description:"Longer-distance family leisure route into Desaru with private return. Minimum 2 adults.",adult:465,child:350,hours:10,image:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"},
-{id:21,category:"Nature",name:"Desaru Coastal Nature Tour",description:"A scenic coastal and nature-focused Malaysia route with longer attached driver timing. Minimum 2 adults.",adult:470,child:354,hours:10,image:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"},
-{id:22,category:"Nature",name:"Johor Nature Escape Tour",description:"A softer, more scenic route for guests who want greenery and slower travel rhythm. Minimum 2 adults.",adult:402,child:302,hours:8,image:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80"},
-{id:23,category:"Nature",name:"Desaru Beach & Nature Tour",description:"Premium private return service for beach, open spaces and nature movement. Minimum 2 adults.",adult:475,child:358,hours:10,image:"https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80"},
-{id:24,category:"Nature",name:"Johor Countryside Discovery Tour",description:"A countryside-themed Malaysia day route with comfort and flexibility. Minimum 2 adults.",adult:408,child:306,hours:8,image:"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"},
-{id:25,category:"Nature",name:"Malaysia Scenic Landscape Tour",description:"A premium scenic route for photo-driven and leisurely travellers. Minimum 2 adults.",adult:420,child:315,hours:9,image:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"},
-{id:26,category:"Heritage",name:"Melaka Heritage Day Tour",description:"Full-day Melaka private tour from Singapore with attached chauffeur and heritage focus. Minimum 2 adults.",adult:516,child:388,hours:12,image:"https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1200&q=80"},
-{id:27,category:"Heritage",name:"Melaka Old Town Discovery Tour",description:"A heritage-heavy full-day route in Melaka with premium private return. Minimum 2 adults.",adult:520,child:392,hours:12,image:"https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"},
-{id:28,category:"Heritage",name:"Batu Pahat Heritage Discovery Tour",description:"A regional heritage tour with outstation timing and private return included. Minimum 2 adults.",adult:448,child:338,hours:9,image:"https://images.unsplash.com/photo-1496939376851-89342e90adcd?auto=format&fit=crop&w=1200&q=80"},
-{id:29,category:"Heritage",name:"Kluang Heritage & Coffee Tour",description:"A Kluang day trip centered on local charm and coffee culture. Minimum 2 adults.",adult:442,child:334,hours:9,image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
-{id:30,category:"Heritage",name:"Johor Cultural Heritage Trail Tour",description:"A cultural storytelling route with private comfort from Singapore. Minimum 2 adults.",adult:410,child:308,hours:8,image:"https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1200&q=80"},
-{id:31,category:"Leisure",name:"Johor Leisure & Spa Escape Tour",description:"A wellness-style day package with downtime and private driver attachment. Minimum 2 adults.",adult:418,child:314,hours:8,image:"https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80"},
-{id:32,category:"Leisure",name:"Johor Romantic Couple Tour",description:"A private Malaysia day route designed for couples and premium leisure clients. Minimum 2 adults.",adult:428,child:322,hours:8,image:"https://images.unsplash.com/photo-1516589091380-5d6011d18f68?auto=format&fit=crop&w=1200&q=80"},
-{id:33,category:"Leisure",name:"Johor Weekend Escape Tour",description:"A versatile all-day JB product with comfortable cross-border logistics. Minimum 2 adults.",adult:408,child:306,hours:8,image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"},
-{id:34,category:"Leisure",name:"Desaru Resort Leisure Tour",description:"A premium Desaru resort-area route with longer touring time and private return. Minimum 2 adults.",adult:478,child:360,hours:10,image:"https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80"},
-{id:35,category:"Leisure",name:"Johor Golf & Leisure Tour",description:"A higher-value Malaysia day product for golf and countryside leisure movement. Minimum 2 adults.",adult:458,child:345,hours:9,image:"https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80"},
-{id:36,category:"Luxury",name:"Johor Premium Executive Tour",description:"Built for executives, VIPs and premium clients wanting a polished Malaysia day route. Minimum 2 adults.",adult:440,child:332,hours:8,image:"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80"},
-{id:37,category:"Luxury",name:"Singapore to Johor VIP Lifestyle Tour",description:"Luxury route with premium chauffeur image and stronger prestige positioning. Minimum 2 adults.",adult:452,child:340,hours:8,image:"https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"},
-{id:38,category:"Luxury",name:"Melaka Premium Heritage Escape",description:"A premium full-day Melaka variant with stronger pricing and higher-end positioning. Minimum 2 adults.",adult:545,child:410,hours:12,image:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80"},
-{id:39,category:"Luxury",name:"Desaru Luxury Retreat Tour",description:"A more elite coastal leisure product for premium travellers. Minimum 2 adults.",adult:495,child:372,hours:10,image:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"},
-{id:40,category:"Luxury",name:"Johor Private Luxury Signature Tour",description:"Top-tier JB chauffeur route for high-value clients with flexible private movement. Minimum 2 adults.",adult:468,child:352,hours:8,image:"https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=80"},
-{id:41,category:"Melaka",name:"Melaka Food & Heritage Tour",description:"Full-day Melaka route balancing historic atmosphere and local culinary appeal. Minimum 2 adults.",adult:528,child:396,hours:12,image:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"},
-{id:42,category:"Melaka",name:"Melaka River & Old Street Tour",description:"Private chauffeur-supported full-day Melaka sightseeing route. Minimum 2 adults.",adult:532,child:400,hours:12,image:"https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"},
-{id:43,category:"Melaka",name:"Melaka Family Discovery Tour",description:"A more family-suited version of the Melaka private tour from Singapore. Minimum 2 adults.",adult:535,child:404,hours:12,image:"https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80"},
-{id:44,category:"Melaka",name:"Melaka Premium Day Escape Tour",description:"Private full-day cross-border product with stronger premium styling. Minimum 2 adults.",adult:548,child:412,hours:12,image:"https://images.unsplash.com/photo-1516589091380-5d6011d18f68?auto=format&fit=crop&w=1200&q=80"},
-{id:45,category:"Melaka",name:"Melaka Cultural Storytelling Tour",description:"A narrative-rich heritage and city experience in a private chauffeur format. Minimum 2 adults.",adult:540,child:406,hours:12,image:"https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1200&q=80"},
-{id:46,category:"Johor City",name:"Ultimate Johor Bahru Premium Day Tour",description:"The strongest JB day product with premium structure and pricing. Minimum 2 adults.",adult:485,child:365,hours:10,image:"https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"},
-{id:47,category:"Leisure",name:"Ultimate Desaru Premium Leisure Tour",description:"Extended premium leisure route to Desaru built as a top-tier cross-border experience. Minimum 2 adults.",adult:510,child:382,hours:10,image:"https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80"},
-{id:48,category:"Luxury",name:"Ultimate Johor VIP Signature Tour",description:"Flagship Johor private luxury route designed for the most premium clientele. Minimum 2 adults.",adult:525,child:394,hours:10,image:"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80"},
-{id:49,category:"Melaka",name:"Ultimate Melaka Heritage Signature Tour",description:"A flagship full-day Melaka heritage experience with premium pacing. Minimum 2 adults.",adult:620,child:468,hours:12,image:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80"},
-{id:50,category:"Melaka",name:"Ultimate Melaka Full-Day Chauffeur Tour",description:"Top-tier Melaka premium chauffeur package with the strongest pricing position. Minimum 2 adults.",adult:648,child:486,hours:12,image:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"}
-];
-
-const sharedTours = [
-{id:1,category:"Explore Singapore",code:"AMCTNT",name:"3.5hrs City Tour",description:"Shared Singapore city highlights tour.",adult:50,child:35,hours:3.5,image:"https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80"},
-{id:2,category:"Explore Singapore",code:"BATTNT",name:"3.5hrs Battlefield Tour",description:"Shared battlefield-themed sightseeing tour.",adult:99,child:69,hours:3.5,image:"https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"},
-{id:3,category:"Wildlife Encounter",code:"BRPTNT",name:"Bird Paradise - Free & Easy",description:"Shared coach transfer and admission style free & easy wildlife visit.",adult:89,child:62,hours:4,image:"https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=1200&q=80"},
-{id:4,category:"Wildlife Encounter",code:"RWATNT",name:"Rainforest Wild ASIA - Free & Easy",description:"Shared coach wildlife experience with free & easy format.",adult:84,child:59,hours:4,image:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80"},
-{id:5,category:"Wildlife Encounter",code:"ZONTNT",name:"4hrs Morning at the Zoo",description:"Shared morning zoo experience without breakfast.",adult:87,child:61,hours:4,image:"https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?auto=format&fit=crop&w=1200&q=80"},
-{id:6,category:"After Dark",code:"NSTTNT",name:"Night Safari Tour",description:"Shared night wildlife experience with transport and iconic evening safari concept.",adult:101,child:71,hours:4,image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"},
-{id:7,category:"After Dark",code:"NIGHTNT",name:"Nightout @ Chinatown, Market & Light Show",description:"Shared night sightseeing around Chinatown and city lights.",adult:48,child:34,hours:3,image:"https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80"},
-{id:8,category:"After Dark",code:"MBSLNT",name:"Marina Bay Sands Light Show Tour",description:"Shared evening city light show route.",adult:45,child:32,hours:3,image:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80"},
-{id:9,category:"Explore Singapore",code:"SENTNT",name:"Sentosa Free & Easy Tour",description:"Shared coach leisure transfer around Sentosa.",adult:46,child:33,hours:4,image:"https://images.unsplash.com/photo-1496372412473-e8548ffd82bc?auto=format&fit=crop&w=1200&q=80"},
-{id:10,category:"Walking Tour",code:"LITWNT",name:"Little India Walking Tour",description:"Shared Little India walking and culture experience.",adult:42,child:30,hours:3,image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"},
-{id:11,category:"Walking Tour",code:"SOCFFF",name:"Stories of Chinatown: Faith, Flavor & Footsteps",description:"Shared Chinatown walking and cultural storytelling experience.",adult:118,child:83,hours:4,image:"https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80"}
-];
-
-const transferPrices = {
-"Johor Bahru":{Economy:180,Premium:250,Business:300,Luxury:500},
-"Pontian":{Economy:260,Premium:400,Business:480,Luxury:800},
-"Desaru":{Economy:270,Premium:410,Business:490,Luxury:820},
-"Kluang":{Economy:312,Premium:468,Business:560,Luxury:935},
-"Batu Pahat":{Economy:360,Premium:500,Business:600,Luxury:1000},
-"Muar":{Economy:420,Premium:585,Business:700,Luxury:1170},
-"Melacca":{Economy:516,Premium:720,Business:860,Luxury:1435},
-"Kuala Lumpur":{Economy:714,Premium:995,Business:1190,Luxury:1985},
-"Genting":{Economy:762,Premium:1065,Business:1270,Luxury:2120},
-"Penang":{Economy:1314,Premium:1830,Business:2190,Luxury:3650},
-"Hatyai":{Economy:1662,Premium:2315,Business:2770,Luxury:4620}
-};
-
-const transferDestinations = Object.keys(transferPrices);
-document.getElementById('destination').innerHTML =
-  '<option value="">Select Destination</option>' +
-  transferDestinations.map(d => `<option value="${d}">${d === 'Genting' ? 'Genting Highlands' : d === 'Hatyai' ? 'Hatyai Thailand' : d}</option>`).join('');
-
-let selectedPrice = 0, selectedDestination = '', selectedVehicle = '';
-
-function calculateTransfer(){
-  const destination=document.getElementById('destination').value;
-  const vehicle=document.getElementById('vehicle').value;
-  if(!destination||!vehicle){
-    alert('Please select destination and vehicle');
-    return;
-  }
-  selectedPrice=transferPrices[destination][vehicle];
-  selectedDestination=destination;
-  selectedVehicle=vehicle;
-  document.getElementById('result').textContent='Estimated Price: SGD '+selectedPrice;
-}
-
-function sendTransferBooking(){
-  const pax=document.getElementById('pax').value||'';
-  const message=`Cross Border Transfer Booking
-
-Destination: ${selectedDestination}
-Vehicle: ${selectedVehicle}
-Price: SGD ${selectedPrice}
-Passengers: ${pax}
-
-Please send exact pickup and drop-off location for final quotation.
-Fuel and toll included.
-Driver accommodation SGD50/day if overnight required.`;
-  window.open('https://wa.me/6584444744?text='+encodeURIComponent(message),'_blank');
-}
-
-function setupCategories(selectId,data){
-  const select=document.getElementById(selectId);
-  [...new Set(data.map(t=>t.category))].forEach(cat=>{
-    const opt=document.createElement('option');
-    opt.value=cat;
-    opt.textContent=cat;
-    select.appendChild(opt);
-  });
-}
-
-function renderTours(data,gridId,countId,searchId,categoryId,malaysia=false,shared=false){
-  const grid=document.getElementById(gridId);
-  const count=document.getElementById(countId);
-  const search=document.getElementById(searchId).value.toLowerCase().trim();
-  const category=document.getElementById(categoryId).value;
-
-  const filtered=data.filter(t=>(
-    (t.name.toLowerCase().includes(search) ||
-     t.description.toLowerCase().includes(search) ||
-     t.category.toLowerCase().includes(search) ||
-     ((t.code||'').toLowerCase().includes(search))) &&
-    (category==='all'||t.category===category)
-  ));
-
-  grid.innerHTML=filtered.map(t=>{
-    const codeBox = shared
-      ? `<div class="meta-box"><span class="meta-label">Code</span><span class="meta-value">${t.code}</span></div>`
-      : '';
-    const note = shared
-      ? 'Shared tour · per person pricing.'
-      : (malaysia ? 'Minimum 2 adults.' : 'Private tour pricing.');
-    const msg = encodeURIComponent('Booking enquiry: '+t.name+' | Adult SGD '+t.adult+' | Child SGD '+t.child+' | Duration '+t.hours+' hrs');
-
-    return `
-      <div class="tour-card">
-        <img src="${t.image}" alt="${t.name}">
-        <div class="tour-body">
-          <span class="badge">${t.category}</span>
-          <div class="title">${t.name}</div>
-          <div class="desc">${t.description}</div>
-          <div class="meta">
-            ${codeBox}
-            <div class="meta-box"><span class="meta-label">Adult</span><span class="meta-value">SGD ${t.adult}</span></div>
-            <div class="meta-box"><span class="meta-label">Child</span><span class="meta-value">SGD ${t.child}</span></div>
-            <div class="meta-box"><span class="meta-label">Duration</span><span class="meta-value">${t.hours} Hrs</span></div>
+      <div class="transfer-wrap">
+        <div class="card sticky-box">
+          <h3 style="font-size:30px;color:var(--champagne-soft);margin-bottom:12px;">Transfer Price Calculator</h3>
+          <div class="field">
+            <label>Destination</label>
+            <select id="destination">
+              <option value="">Select Destination</option>
+              <option value="Johor Bahru">Johor Bahru</option>
+              <option value="Pontian">Pontian</option>
+              <option value="Desaru">Desaru</option>
+              <option value="Kluang">Kluang</option>
+              <option value="Batu Pahat">Batu Pahat</option>
+              <option value="Muar">Muar</option>
+              <option value="Melacca">Melacca</option>
+              <option value="Kuala Lumpur">Kuala Lumpur</option>
+              <option value="Genting">Genting Highlands</option>
+              <option value="Penang">Penang</option>
+              <option value="Hatyai">Hatyai Thailand</option>
+            </select>
           </div>
-          <div class="note-line">${note}</div>
-          <a class="btn-block" href="https://wa.me/6584444744?text=${msg}" target="_blank">Book This Tour</a>
+          <div class="field">
+            <label>Vehicle</label>
+            <select id="vehicle">
+              <option value="">Select Vehicle</option>
+              <option value="Economy">Economy</option>
+              <option value="Premium">Premium</option>
+              <option value="Business">Business</option>
+              <option value="Luxury">Luxury</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Passengers</label>
+            <input type="number" id="pax" placeholder="Enter passengers">
+          </div>
+          <button class="btn full" onclick="calculateRate()">Calculate Price</button>
+          <div class="result" id="resultBox">Estimated Price: —</div>
+          <div class="action-row">
+            <button class="btn" onclick="checkoutSelectedTransfer()">Pay Now</button>
+            <button class="btn ghost" onclick="addSelectedTransferToCart()">Add to Cart</button>
+          </div>
+          <button class="btn full" style="margin-top:14px;" onclick="sendRateBooking()">Send WhatsApp Booking</button>
+          <div class="notice" style="margin-top:16px;">
+            Please send the <strong>exact pickup and drop-off location</strong> and we will get the exact quotation. All <strong>toll charge and fuel is inclusive</strong>. If there is a stopover for long distance driver, <strong>driver accommodation should be covered at SGD 50 per day</strong>.
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Destination</th><th>Distance</th><th>Economy</th><th>Premium</th><th>Business</th><th>Luxury</th></tr>
+            <tr><td>Johor Bahru</td><td>30 km</td><td>SGD 180</td><td>SGD 250</td><td>SGD 300</td><td>SGD 500</td></tr>
+            <tr><td>Pontian</td><td>70 km</td><td>SGD 260</td><td>SGD 400</td><td>SGD 480</td><td>SGD 800</td></tr>
+            <tr><td>Desaru</td><td>85 km</td><td>SGD 270</td><td>SGD 410</td><td>SGD 490</td><td>SGD 820</td></tr>
+            <tr><td>Kluang</td><td>130 km</td><td>SGD 312</td><td>SGD 468</td><td>SGD 560</td><td>SGD 935</td></tr>
+            <tr><td>Batu Pahat</td><td>150 km</td><td>SGD 360</td><td>SGD 500</td><td>SGD 600</td><td>SGD 1000</td></tr>
+            <tr><td>Muar</td><td>180 km</td><td>SGD 420</td><td>SGD 585</td><td>SGD 700</td><td>SGD 1170</td></tr>
+            <tr><td>Melacca</td><td>240 km</td><td>SGD 516</td><td>SGD 720</td><td>SGD 860</td><td>SGD 1435</td></tr>
+            <tr><td>Kuala Lumpur</td><td>350 km</td><td>SGD 714</td><td>SGD 995</td><td>SGD 1190</td><td>SGD 1985</td></tr>
+            <tr><td>Genting Highlands</td><td>380 km</td><td>SGD 762</td><td>SGD 1065</td><td>SGD 1270</td><td>SGD 2120</td></tr>
+            <tr><td>Penang</td><td>750 km</td><td>SGD 1314</td><td>SGD 1830</td><td>SGD 2190</td><td>SGD 3650</td></tr>
+            <tr><td>Hatyai (Thailand)</td><td>950 km</td><td>SGD 1662</td><td>SGD 2315</td><td>SGD 2770</td><td>SGD 4620</td></tr>
+          </table>
         </div>
       </div>
-    `;
-  }).join('');
+    </div>
+  </section>
 
-  count.textContent=`${filtered.length} tour${filtered.length!==1?'s':''}`;
-}
 
-setupCategories('sgCategory',singaporeTours);
-setupCategories('myCategory',malaysiaTours);
-setupCategories('sicCategory',sharedTours);
+  <section class="section detail-section" id="tour-detail">
+    <div class="container">
+      <div class="section-head">
+        <h2>Tour Detail</h2>
+        <p>Each tour card now links here with its own brief description, chauffeur arrangement, inclusions, exclusions, pricing, guest selection, and booking controls.</p>
+      </div>
+      <div class="detail-shell">
+        <div class="detail-gallery">
+          <img id="detailMainImage" class="detail-gallery-main" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80" alt="Tour image">
+          <div class="detail-gallery-stack">
+            <img id="detailSideImage1" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Tour image 2">
+            <img id="detailSideImage2" src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=80" alt="Tour image 3">
+          </div>
+        </div>
+        <div class="detail-panel">
+          <span class="eyebrow" id="detailType">Private Tour</span>
+          <h3 id="detailTitle">Singapore City Highlights Tour</h3>
+          <p class="detail-copy" id="detailDescription">Tour detail will appear here after a customer presses View This Tour.</p>
+          <div class="detail-list">
+            <div class="detail-box">
+              <h4>Inclusions</h4>
+              <ul id="detailInclusions"></ul>
+            </div>
+            <div class="detail-box">
+              <h4>Exclusions</h4>
+              <ul id="detailExclusions"></ul>
+            </div>
+          </div>
+          <div class="detail-pricing">
+            <div class="price-pill"><span>Adult</span><strong id="detailAdult">SGD 120</strong></div>
+            <div class="price-pill"><span>Child</span><strong id="detailChild">SGD 90</strong></div>
+            <div class="price-pill"><span>Duration</span><strong id="detailDuration">4 Hrs</strong></div>
+            <div class="price-pill"><span>Booking Rule</span><strong id="detailRule">Min 2 Adults</strong></div>
+            <div class="price-pill"><span>Driver Mode</span><strong id="detailDriverMode">Full Driver</strong></div>
+          </div>
+          <div class="booking-builder">
+            <div class="booking-grid">
+              <div class="booking-box">
+                <label for="detailAdultQty">Number of Adults</label>
+                <input id="detailAdultQty" type="number" min="0" value="2">
+              </div>
+              <div class="booking-box">
+                <label for="detailChildQty">Number of Children</label>
+                <input id="detailChildQty" type="number" min="0" value="0">
+              </div>
+            </div>
+            <div class="booking-box">
+              <label>Tour Booking Options</label>
+              <p class="mini-copy" style="margin-bottom:14px;">All tour prices include an economy car. Upgrade charges are calculated by tour duration.</p>
+              <div class="booking-grid">
+                <div class="booking-box">
+                  <label for="vehicleUpgrade">Vehicle Class Upgrade</label>
+                  <select id="vehicleUpgrade">
+                    <option value="0">Economy Included</option>
+                    <option value="10">Premium Economy · +SGD 10 per hour</option>
+                    <option value="20">Business Class · +SGD 20 per hour</option>
+                    <option value="90">Luxury Class W222 · +SGD 90 per hour</option>
+                  </select>
+                </div>
+                <div class="booking-box">
+                  <label for="guideOption">Tour Guide</label>
+                  <select id="guideOption">
+                    <option value="0">No Tour Guide</option>
+                    <option value="50|English-speaking guide">English-speaking guide · SGD 50 per hour</option>
+                    <option value="90|Russian / Spanish / German / Italian guide">Russian / Spanish / German / Italian · SGD 90 per hour</option>
+                  </select>
+                </div>
+                <div class="booking-box">
+                  <label for="babySeatQty">Baby Seat Quantity</label>
+                  <select id="babySeatQty">
+                    <option value="0">No baby seat</option>
+                    <option value="1">1 seat · SGD 20</option>
+                    <option value="2">2 seats · SGD 40</option>
+                    <option value="3">3 seats · SGD 60</option>
+                    <option value="4">4 seats · SGD 80</option>
+                  </select>
+                </div>
+                <div class="booking-box">
+                  <label for="photographerOption">Photographer</label>
+                  <select id="photographerOption">
+                    <option value="0">No photographer</option>
+                    <option value="50">Photographer · SGD 50 per hour</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="summary-box">
+              <div class="price-pill"><span>Adults Total</span><strong id="detailAdultsTotal">SGD 240</strong></div>
+              <div class="price-pill"><span>Children Total</span><strong id="detailChildrenTotal">SGD 0</strong></div>
+              <div class="price-pill"><span>Upgrade Total</span><strong id="detailUpgradeTotal">SGD 0</strong></div>
+              <div class="price-pill"><span>Add-Ons Total</span><strong id="detailAddonsTotal">SGD 0</strong></div>
+              <div class="price-pill"><span>Booking Total</span><strong id="detailBookingTotal">SGD 240</strong></div>
+            </div>
+          </div>
+          <div class="detail-cta">
+            <button class="btn" id="detailPayNow">Pay Now</button>
+            <button class="btn ghost" id="detailAddToCart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-['sgSearch','sgCategory'].forEach(id =>
-  document.getElementById(id).addEventListener(
-    id.includes('Search') ? 'input' : 'change',
-    () => renderTours(singaporeTours,'sgGrid','sgCount','sgSearch','sgCategory',false,false)
-  )
-);
+  <section class="section" id="fleet">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Fleet</h2>
+        <p>Premium fleet presentation in the same brown visual system for a stronger luxury feel and better brand consistency. <span id="fleetSelectedLabel">Selected vehicle will appear here when a customer clicks View and Book.</span></p>
+      </div>
+      <div class="grid-4">
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Luxury MPV</span>
+            <h3>Toyota Alphard</h3>
+            <p>Premium MPV for airport, family and cross-border comfort.</p>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Executive Van</span>
+            <h3>Mercedes V-Class</h3>
+            <p>Business-class van suited for VIP and executive movement.</p>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Executive Sedan</span>
+            <h3>Mercedes E-Class</h3>
+            <p>Refined sedan for transfers and business travel.</p>
+          </div>
+        </div>
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="fleet-body">
+            <span class="tag">Flagship Luxury</span>
+            <h3>Mercedes S-Class</h3>
+            <p>Top-tier luxury vehicle for VIP, wedding and executive clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-['mySearch','myCategory'].forEach(id =>
-  document.getElementById(id).addEventListener(
-    id.includes('Search') ? 'input' : 'change',
-    () => renderTours(malaysiaTours,'myGrid','myCount','mySearch','myCategory',true,false)
-  )
-);
+  <section class="section alt" id="faq">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="card faq-box">
+          <h3>Frequently Asked Questions</h3>
+          <div class="faq-list">
+            <div class="faq-item"><strong>How do I get the final quotation?</strong><span>Send exact pickup and drop-off location so we can confirm the precise route and pricing.</span></div>
+            <div class="faq-item"><strong>Are toll and fuel included?</strong><span>Yes. Toll and fuel are inclusive unless the journey scope changes significantly.</span></div>
+            <div class="faq-item"><strong>Is driver accommodation required?</strong><span>For long-distance overnight journeys, driver accommodation should be covered at SGD 50 per day.</span></div>
+            <div class="faq-item"><strong>Can I choose private or shared?</strong><span>Yes. The website now clearly separates Singapore tours, Malaysia tours and Seat-In-Coach shared tours.</span></div>
+          </div>
+        </div>
+        <div class="card cta-box">
+          <h3>Luxury should feel clear.</h3>
+          <p>The strongest limousine websites look premium, but they also make it easy for customers to understand their options and enquire quickly. That is what this version does better.</p>
+          <div class="cta-actions">
+            <a class="btn" href="#sg-transfer">Singapore Transfer</a>
+            <a class="btn" href="#shared">Seat In Coach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-['sicSearch','sicCategory'].forEach(id =>
-  document.getElementById(id).addEventListener(
-    id.includes('Search') ? 'input' : 'change',
-    () => renderTours(sharedTours,'sicGrid','sicCount','sicSearch','sicCategory',false,true)
-  )
-);
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact Us</h2>
+        <p>Dedicated contact section with direct channels and enquiry form.</p>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-stack">
+          <div class="card contact-card"><h3 style="color:var(--champagne-soft);margin-bottom:8px;">Phone / WhatsApp</h3><p>+65 8444 4744</p></div>
+          <div class="card contact-card"><h3 style="color:var(--champagne-soft);margin-bottom:8px;">Email</h3><p>admin@glancelimousine.com.sg</p></div>
+          <div class="card contact-card"><h3 style="color:var(--champagne-soft);margin-bottom:8px;">Location</h3><p>Singapore</p></div>
+        </div>
+        <div class="card form-card">
+          <div class="field"><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="Your email"></div>
+          <div class="field"><label>Message</label><textarea rows="5" placeholder="Tell us your booking details"></textarea></div>
+          <button class="btn full">Send Message</button>
+          <p class="mini-copy" style="margin-top:12px;">For faster response, use the WhatsApp floating button and send pickup point, drop-off point, date, time and passenger count.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-renderTours(singaporeTours,'sgGrid','sgCount','sgSearch','sgCategory',false,false);
-renderTours(malaysiaTours,'myGrid','myCount','mySearch','myCategory',true,false);
-renderTours(sharedTours,'sicGrid','sicCount','sicSearch','sicCategory',false,true);
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>Glance Limousine</h4>
+        <p>Luxury chauffeur service across Singapore and Malaysia with private tours, shared tours and cross-border transfers.</p>
+      </div>
+      <div>
+        <h4>Main Pages</h4>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Booking Pages</h4>
+        <a href="#sg-transfer">Singapore Transfer</a>
+        <a href="#my-transfer">Malaysia Transfer</a>
+        <a href="#sg-tours">Singapore Tours</a>
+        <a href="#my-tours">Malaysia Tours</a>
+      </div>
+      <div>
+        <h4>Shared & Support</h4>
+        <a href="#shared">Seat In Coach</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="cart-drawer" id="cartDrawer">
+    <h4>Cart <span class="cart-count" id="cartCount">0</span></h4>
+    <div class="cart-items" id="cartItems"><div class="cart-empty">No items yet.</div></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">SGD 0</strong></div>
+    <div class="action-row">
+      <button class="btn" onclick="checkoutCart()">Pay Cart</button>
+      <button class="btn ghost" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </div>
+
+  <div class="floating-dock">
+    <a class="dock-wa" href="https://wa.me/6584444744" target="_blank">WhatsApp</a>
+    <a class="dock-mail" href="mailto:admin@glancelimousine.com.sg">Email</a>
+    <a class="dock-call" href="tel:+6584444744">Call</a>
+    <a class="dock-link" href="#shared">Seat In Coach</a>
+    <a class="dock-link" href="#sg-tours">Singapore Tours</a>
+    <a class="dock-link" href="#my-tours">Malaysia Tours</a>
+    <a class="dock-link" href="#my-transfer">Cross Border Transfers</a>
+    <a class="dock-link" href="#sg-transfer">Singapore Transfers</a>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Glance Limousine",
+    "url": "https://www.glancelimousine.com.sg",
+    "email": "admin@glancelimousine.com.sg",
+    "telephone": "+65 8444 4744",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SG",
+      "addressLocality": "Singapore"
+    },
+    "areaServed": ["Singapore", "Johor Bahru", "Malaysia"],
+    "description": "Luxury chauffeur service for Singapore transfers, Malaysia cross-border transfers, private tours and seat-in-coach tours."
+  }
+  
+    function openFleetPage(vehicleName){
+      const label = document.getElementById('fleetSelectedLabel');
+      if (label) {
+        label.innerHTML = '<strong>Selected from Singapore Transfer:</strong> ' + vehicleName + '.';
+      }
+      const fleetSection = document.getElementById('fleet');
+      if (fleetSection) {
+        fleetSection.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
 </script>
+  <script src="app.js"></script>
 </body>
 </html>
