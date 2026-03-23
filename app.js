@@ -103,6 +103,34 @@ const imagePool = {
       ...item,
       serviceMode: 'full-driver'
     }));
+
+    const fleetData = [
+      { 
+        title: 'Mercedes S-Class', 
+        tag: 'Luxury', 
+        desc: 'Flagship luxury chauffeur choice for VIP and premium executive bookings.', 
+        image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80' 
+      },
+      { 
+        title: 'Mercedes V-Class', 
+        tag: 'Business', 
+        desc: 'Business-class van for executives, hotel guests and VIP movement.', 
+        image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80' 
+      },
+      { 
+        title: 'Toyota Alphard / Vellfire', 
+        tag: 'Premium', 
+        desc: 'Popular luxury MPV for airport, hotel and family transport.', 
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80' 
+      },
+      { 
+        title: 'Toyota Noah', 
+        tag: 'Economy', 
+        desc: 'Airport transfer and city transfer for practical premium travellers.', 
+        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80' 
+      }
+    ];
+
     const cart = [];
 
 
@@ -178,6 +206,7 @@ function getExclusions(region){
     function renderTourCards(list, targetId, countId, buttonText, region){
       const grid = document.getElementById(targetId);
       const count = document.getElementById(countId);
+      if(!grid) return;
       grid.innerHTML = list.map((item, index) => `
         <div class="tour-card">
           <img src="${item.image}" alt="${item.title}">
@@ -198,7 +227,25 @@ function getExclusions(region){
           </div>
         </div>
       `).join('');
-      count.textContent = `${list.length} tours`;
+      if(count) count.textContent = `${list.length} tours`;
+    }
+
+    function renderFleetCards(list, targetId){
+      const grid = document.getElementById(targetId);
+      if(!grid) return;
+      grid.innerHTML = list.map(item => `
+        <div class="card fleet-card">
+          <div class="fleet-image" style="background-image:url('${item.image}');"></div>
+          <div class="fleet-body">
+            <span class="badge">${item.tag}</span>
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+            <div class="action-row">
+              <button class="btn full" onclick="window.location.hash='#contact'">View and Book</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
     }
 
     function setupFilter(data, searchId, categoryId, targetId, countId, buttonText, region){
@@ -431,4 +478,6 @@ function getExclusions(region){
     setupFilter(singaporeTours, 'sgSearch', 'sgCategory', 'sgTourGrid', 'sgCount', 'View This Tour', 'Singapore Tours');
     setupFilter(malaysiaTours, 'mySearch', 'myCategory', 'myTourGrid', 'myCount', 'View This Tour', 'Malaysia Tours');
     setupFilter(sharedTours, 'sharedSearch', 'sharedCategory', 'sharedTourGrid', 'sharedCount', 'View This Tour', 'Seat In Coach');
+    renderFleetCards(fleetData, 'sgTransferGrid');
+    renderFleetCards(fleetData, 'fleetGrid');
     renderCart();
